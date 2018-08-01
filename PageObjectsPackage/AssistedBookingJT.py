@@ -12,7 +12,7 @@ class JTAssistedBooking(SeleniumDriver):
     select_day = "//*[contains(text(),'Day of Week')]"
     select_timing = "//*[contains(text(),'1st Day')]"
     show_timing = "//*[contains(text(),'{0}')]/span[contains(text(),'{1}')]"
-    choose_chity = "//*[@id='justickets']/div/div[2]/div/div[2]/div[2]/div[3]/div/div/div"
+    choose_city = "//*[@id='justickets']/div/div[2]/div/div[2]/div[2]/div[3]/div/div/div"
     choose_theatre = "//*[@id='justickets']/div/div[2]/div/div[2]/div[2]/div[4]/div/div/div"
     disable_advance_booking = "//*[@id='justickets']/div/div[2]/div/div[2]/div[2]/div[5]/div/span[1]/label"
     enable_advance_booking = "//*[@id='justickets']/div/div[2]/div/div[2]/div[2]/div[5]/div/span[2]/label"

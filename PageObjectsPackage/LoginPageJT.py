@@ -20,13 +20,13 @@ class LoginToJT(SeleniumDriver):
 
     #Locators in login page for JT              Locator types for reference
 
-    _LoginLink = "//*[@id='justickets']/div/div[1]/div[1]/div/a[3]/span"              #xpath
+    _LoginLink = "//*/span[contains(text(),'Sign In')]"              #xpath
     _EmailField = "contact"                     #id
     _VerifyContact = "contact_verify"           #id
     _PasswordField = "password"                 #id
     _SignInButton = "signin_btn"                #id
     _VerifyLogin = "//*[contains(text(),'My Account')]"            #xpath
-    _SignOut = "//*[@id='justickets']/div/div[1]/div[1]/div/a[3]/span"
+    _SignOut = "//*/span[contains(text(),'Sign Out')]"
 
     def ClickLoginLink(self):
         self.elementClick(self._LoginLink, locatorType="xpath")
