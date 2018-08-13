@@ -15,7 +15,7 @@ class MyAccountPageJT(SeleniumDriver):
 
     log = cl.customLogger(logging.DEBUG)
 
-    def verify_last_booked_ticket(self,movie_name):
+    def verify_last_booked_ticket(self, movie_name):
         try:
             self.log.info("Going on booking history tab","by clicking  xpath",self.locator["booking_history_tab"]["xpath"])
             self.elementClick(self.locator["booking_history_tab"]["xpath"], locatorType="xpath")

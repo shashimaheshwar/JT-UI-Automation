@@ -1,45 +1,45 @@
 {
 	"pay_via_jt_wallet": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[1]/div/div/div[1]"
+		"xpath": "//*[@class='title' and contains(text(),'Pay with  Justickets Wallet')]"
 	},
 	"make_payment": {
 		"xpath": "//*[contains(@class,'enabled') and contains(text(),'Make Payment')]"
 	},
 	"pay_via_justpay": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[1]"
+		"xpath": "//*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')]"
 	},
 	"card_number": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/input"
+		"xpath": "//*/div[@class='card']/input[@autocomplete='cc-number']"
 	},
 	"expiry_date": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[1]/input"
+		"xpath": "//*/div[@class='half']/input[@autocomplete='cc-exp']"
 	},
 	"cvv_number": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[2]/input"
+		"xpath": "//*/div[@class='half']/input[@autocomplete='cc-csc']"
 	},
 	"user_name": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[1]"
+		"xpath": "//*/input[@data-reactid='.0.1.$orders.5.0.1.3.3.a.1']"
 	},
 	"user_email": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[2]"
+		"xpath": "//*/input[@type='email' and @class='prefilled undefined']"
 	},
 	"user_mobile": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/div/input"
+		"xpath": "//*/div[@class='prefixed-mobile']/input[@class='prefilled undefined']"
 	},
 	"pay_via_phonepay": {
 		"xpath": "//*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')]"
 	},
 	"phone_pay_number": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[8]/form/div[1]/div[2]/div/div[1]"
+		"id": "mobileNumber"
 	},
 	"name_for_ticket_detail": {
-		"xpath": "//*[@class='banking']/div[1]/input[1]"
+		"xpath": "//*/input[@data-reactid='.0.1.$orders.5.0.1.9.3.0.1"
 	},
 	"email_for_ticket_detail": {
-		"xpath": "//*[@class='banking']/div[1]/input[2]"
+		"xpath": "//*/input[@type='email' and @class='prefilled undefined']"
 	},
 	"mobile_for_ticket_details": {
-		"xpath": "//*[@class='banking']/div[1]/div/input"
+		"xpath": "//*/div[@class='prefixed-mobile']/input[@class='prefilled undefined']"
 	},
 	"use_pp_password": {
 		"id": "loginWithPasswordToggle"
@@ -96,7 +96,7 @@
 		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2]"
 	},
 	"Card_CVV": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div/input"
+		"xpath": "//*/div[@class='half']/input[@autocomplete='cc-csc']"
 	},
 	"card_num_loc": {
 		"xpath": "//*[@class='card']/input[@type='tel']"
