@@ -1,5 +1,6 @@
 from selenium import webdriver
-from ConfigVars import variables,urls
+from ConfigVars.TestConfig import variables
+from ConfigVars.FrameworkConfig import urls
 
 
 class DriverIntialization():

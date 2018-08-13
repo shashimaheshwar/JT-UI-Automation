@@ -5,8 +5,8 @@ from PageObjectsPackage.HomePageJT import JTHomePage
 from PageObjectsPackage.PaymentPageJT import PaymentClassJT
 from PageObjectsPackage.CheersPageJT import CheersAndGreetingsJT
 from PageObjectsPackage.FoodAndBrevrage import FoodAndBrevrageJT
-from ConfigVars import variables,urls
-from InputData import SessionTypeInfo
+from ConfigVars.FrameworkConfig import urls
+from ConfigVars.TestConfig import variables,SessionTypeInfo
 from UtilityPackage.DriverIntialization import DriverIntialization
 from UtilityPackage.ExractSeatLayoutInformation import ExtractSessionID
 import unittest

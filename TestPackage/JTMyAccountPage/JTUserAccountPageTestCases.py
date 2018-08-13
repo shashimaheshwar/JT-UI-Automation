@@ -9,8 +9,9 @@ from PageObjectsPackage.FoodAndBrevrage import FoodAndBrevrageJT
 from InputData import SessionTypeInfo
 from UtilityPackage.ExractSeatLayoutInformation import ExtractSessionID
 from UtilityPackage.DriverIntialization import DriverIntialization
-from ConfigVars import variables,urls
-from InputData import MyAccountInputs
+from ConfigVars.FrameworkConfig import urls
+from ConfigVars.TestConfig import variables
+from ConfigVars.TestConfig import MyAccountInputs
 import unittest
 import pytest
 import time,random

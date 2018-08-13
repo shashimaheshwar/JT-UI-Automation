@@ -1,5 +1,4 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
-from ConfigVars import variables
 import json
 
 class JTAssistedBooking(SeleniumDriver):

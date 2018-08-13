@@ -2,7 +2,8 @@ from PageObjectsPackage.LoginPageJT import LoginToJT
 from PageObjectsPackage.HomePageJT import JTHomePage
 from PageObjectsPackage.AssistedBookingJT import JTAssistedBooking
 from UtilityPackage.DriverIntialization import DriverIntialization
-from ConfigVars import variables,urls
+from ConfigVars.TestConfig import variables
+from ConfigVars.FrameworkConfig import urls
 import unittest
 import pytest
 import time

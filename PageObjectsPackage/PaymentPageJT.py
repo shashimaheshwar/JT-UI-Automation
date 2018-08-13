@@ -1,5 +1,5 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
-from ConfigVars import variables
+from ConfigVars.TestConfig import variables
 import time,json
 
 """

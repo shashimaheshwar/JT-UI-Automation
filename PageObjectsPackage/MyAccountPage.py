@@ -1,8 +1,9 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
-from ConfigVars import urls,variables
+from ConfigVars.TestConfig import variables
 import time,json
 import UtilityPackage.CustomLogger as cl
 import logging
+
 
 class MyAccountPageJT(SeleniumDriver):
 

@@ -1,5 +1,7 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
 import json
+
+
 class SeatLayoutClass(SeleniumDriver):
 
     def __init__(self, driver, locator):

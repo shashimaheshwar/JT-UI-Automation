@@ -1,4 +1,4 @@
-from ConfigVars import variables
+from ConfigVars.TestConfig import variables
 
 HOME_PAGE='https://www.blacktickets.in/chennai'
 PAYMENTS_PAGE='https://www.blacktickets.in/orders/{0}'

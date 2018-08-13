@@ -1,4 +1,4 @@
-from ConfigVars import urls
+from ConfigVars.FrameworkConfig import urls
 import requests
 import json,random
 
