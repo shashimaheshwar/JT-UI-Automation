@@ -8,6 +8,7 @@ from PageObjectsPackage.CheersPageJT import CheersAndGreetingsJT
 from PageObjectsPackage.FoodAndBrevrage import FoodAndBrevrageJT
 from InputData import SessionTypeInfo
 from UtilityPackage.ExractSeatLayoutInformation import ExtractSessionID
+from UtilityPackage.DriverIntialization import DriverIntialization
 from ConfigVars import variables,urls
 from InputData import MyAccountInputs
 import unittest
@@ -16,19 +17,25 @@ import time,random
 
 
 class JTMyAccountTestClass(unittest.TestCase):
+
     baseURL = urls.HOME_PAGE
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.implicitly_wait(variables.WAIT)
-    driver.get(baseURL)
-    ltj = LoginToJT(driver)
-    homePageObj = JTHomePage(driver)
-    sl=SeatLayoutClass(driver)
-    pay=PaymentClassJT(driver)
-    account=MyAccountPageJT(driver)
-    cheers = CheersAndGreetingsJT(driver)
-    utility = ExtractSessionID()
-    fnb = FoodAndBrevrageJT(driver)
+
+    @classmethod
+    def setUpClass(cls):
+        driver = DriverIntialization(urls.HOME_PAGE).return_driver()
+        cls.driver = driver
+        cls.ltj = LoginToJT(driver, 'PageObjectLocator/LoginPageJT.json')
+        cls.homePageObj = JTHomePage(driver, 'PageObjectLocator/HomePageJT.json')
+        cls.sl = SeatLayoutClass(driver, 'PageObjectLocator/SeatLayoutPageJT.json')
+        cls.pay = PaymentClassJT(driver, 'PageObjectLocator/PaymentPageJT.json')
+        cls.cheers = CheersAndGreetingsJT(driver, 'PageObjectLocator/CheersPageJT.json')
+        cls.utility = ExtractSessionID()
+        cls.fnb = FoodAndBrevrageJT(driver, 'PageObjectLocator/FoodAndBrevrage.json')
+        cls.account = MyAccountPageJT(driver, 'PageObjectLocator/MyAccountPage.json')
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.close()
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
     @pytest.mark.run(order=1)
@@ -136,9 +143,9 @@ class JTMyAccountTestClass(unittest.TestCase):
         else:
             assert False
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE,TEST", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE,TESTING", reason="")
     @pytest.mark.run(order=7)
-    def test_recharge_account_statement(self):
+    def test_verify_confirmed_movie(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
         time.sleep(5)

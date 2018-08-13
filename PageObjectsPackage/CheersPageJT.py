@@ -1,6 +1,6 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
 from ConfigVars import variables
-import time
+import json
 
 """
 PaymentClassJT: Surprise your loved ones on big screens
@@ -9,15 +9,16 @@ PaymentClassJT: Surprise your loved ones on big screens
 
 class CheersAndGreetingsJT(SeleniumDriver):
 
-    def __init__(self, driver):
+    def __init__(self, driver, locator):
         #super().__init__(driver)
         self.driver = driver
-
-    skip_cheers="//*[contains(text(),'Skip and Proceed to View Ticket')]"
+        with open(locator) as f:
+            data = json.load(f)
+        self.locator = data
 
     def skip_cheers_greetings(self):
-        self.elementClick(self.skip_cheers, locatorType="xpath")
+        self.elementClick(self.locator["skip_cheers"]["xpath"], locatorType="xpath")
 
     def verify_ticket_booking(self):
-        element = self.isElementPresent(self.skip_cheers, locatorType="xpath")
+        element = self.isElementPresent(self.locator["skip_cheers"]["xpath"], locatorType="xpath")
         return element

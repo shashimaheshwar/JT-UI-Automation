@@ -1,0 +1,5 @@
+{
+	"skip_cheers": {
+		"xpath": "//*[contains(text(),'Skip and Proceed to View Ticket')]"
+	}
+}

@@ -1,0 +1,80 @@
+{
+	"justickets_home": {
+		"xpath": "//*[@class='logo-holder']/img"
+	},
+	"retrieve_booking": {
+		"xpath": "//*/span[contains(text(),'Retrieve Booking')]"
+	},
+	"location": {
+		"xpath": "//*[@class='action city-selector']"
+	},
+	"movie_filter": {
+		"xpath": "//*[@class='value']/span[contains(text(),'Any Movie')]"
+	},
+	"movie_input": {
+		"xpath": "//*[@class='search' and @placeholder='Search for a movie...']"
+	},
+	"movie_filter_default": {
+		"xpath": "//*[@class='value']/span[contains(text(),'{0}')]"
+	},
+	"theater_filter": {
+		"xpath": "//*[@class='value']/span[contains(text(),'Any Theatre')]"
+	},
+	"theatre_input": {
+		"xpath": "//*[@class='search' and @placeholder='Search for a theatre...']"
+	},
+	"theater_filter_default": {
+		"xpath": "//*[@class='value']/span[contains(text(),'{0}')]"
+	},
+	"date_filter": {
+		"xpath": "//*[@class='value']/span[contains(text(),'Any Date')]"
+	},
+	"date_input": {
+		"xpath": "//*[@class='search' and @placeholder='Search for a date...']"
+	},
+	"date_filter_default": {
+		"xpath": "//*[@class='value']/span[contains(text(),'{0}')]"
+	},
+	"time_filter": {
+		"xpath": "//*[@class='value']/span[contains(text(),'Any Time')]"
+	},
+	"time_filter_default": {
+		"xpath": "//*[@class='value']/span[contains(text(),'{0}')]"
+	},
+	"offer_filter": {
+		"xpath": "//*[@class='value']/span[contains(text(),'Any Offer')]"
+	},
+	"offer_filter_default": {
+		"xpath": "//*[@class='value']/span[contains(text(),'{0}')]"
+	},
+	"bookings_open": {
+		"xpath": "//*[@class='active']/p[contains(text(),'Bookings Open')]"
+	},
+	"assisted_bookings": {
+		"xpath": "//*[@class='active']/p[contains(text(),'Assisted Booking')]"
+	},
+	"offers": {
+		"xpath": "//*[@class='active']/p[contains(text(),'Offers')]"
+	},
+	"cheers": {
+		"xpath": "//*[@class='active']/p[contains(text(),'Cheers')]"
+	},
+	"search_movie": {
+		"xpath": "//*[@class='movie-search ']"
+	},
+	"select_session": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a"
+	},
+	"user_avatar_text": {
+		"xpath": "//*[@id='justickets']/div/div[1]/div[1]/div/a[4]/span"
+	},
+	"verify_movie_got_selected": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2"
+	},
+	"movie_search_res": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/img"
+	},
+	"my_account": {
+		"xpath": "//*[contains(text(),'My Account')]"
+	}
+}

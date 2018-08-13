@@ -1,0 +1,44 @@
+{
+	"recharge_offers": {
+		"xpath": "//*[@class='name' and contains(text(),'{0}')]"
+	},
+	"recharge_amount_placeholder": {
+		"xpath": "//*[@class='amount-selector']"
+	},
+	"recharge_with_netbanking": {
+		"xpath": "//*[contains(text(),'Recharge with  Net Banking')]"
+	},
+	"apply_offer": {
+		"xpath": "//*[contains(text(),'Apply Offer')]"
+	},
+	"gift_coupan": {
+		"xpath": "//*[contains(text(),'Apply a Justickets Gift Card')]"
+	},
+	"coupan_code": {
+		"xpath": "//*[@class='coupon']/input"
+	},
+	"apply_code": {
+		"xpath": "//*[@class=' enabled'and contains(text(),'Apply Justickets Gift Card')]"
+	},
+	"verify_gift_card_payment": {
+		"xpath": "//*[contains(text(),'Gift card applied')]"
+	},
+	"rechare_amount_button": {
+		"xpath": "//*[@class='amount-options']/span[contains(text(),{0})]"
+	},
+	"statement_table": {
+		"xpath": "//*[@class='statement']"
+	},
+	"account_statement_tab": {
+		"xpath": "//*[contains(text(),'Account Statement')]"
+	},
+	"last_entry_to_statement": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[4]/div[2]/table/tbody/tr[2]/td[1]/div/span[1]"
+	},
+	"ticket_booking_verification": {
+		"xpath": "//*[@class='title' and contains(text(),'{0}')]"
+	},
+	"booking_history_tab": {
+		"xpath": "//*[contains(text(),'Booking History')]"
+	}
+}

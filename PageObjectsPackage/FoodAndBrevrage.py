@@ -1,6 +1,6 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
 from ConfigVars import variables
-import time
+import json
 
 """
 FoodAndBrevrageJT:Skip F&B or Order_fnb_item.
@@ -9,14 +9,15 @@ FoodAndBrevrageJT:Skip F&B or Order_fnb_item.
 
 class FoodAndBrevrageJT(SeleniumDriver):
 
-    def __init__(self, driver):
+    def __init__(self, driver, locator):
         self.driver = driver
-
-    skip_cheers = "//*[contains(text(),'Skip F&B and Pay')]"
+        with open(locator) as f:
+            data = json.load(f)
+        self.locator = data
 
     def skip_food_brev(self):
-        self.elementClick(self.skip_cheers, locatorType="xpath")
+        self.elementClick(self.locator["skip_cheers"]["xpath"], locatorType="xpath")
 
     def verify_existence_fnb(self):
-        element = self.isElementPresent(self.skip_cheers, locatorType="xpath")
+        element = self.isElementPresent(self.locator["skip_cheers"]["xpath"], locatorType="xpath")
         return element

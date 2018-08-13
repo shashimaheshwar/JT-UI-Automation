@@ -1,0 +1,113 @@
+{
+	"pay_via_jt_wallet": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[1]/div/div/div[1]"
+	},
+	"make_payment": {
+		"xpath": "//*[contains(@class,'enabled') and contains(text(),'Make Payment')]"
+	},
+	"pay_via_justpay": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[1]"
+	},
+	"card_number": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/input"
+	},
+	"expiry_date": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[1]/input"
+	},
+	"cvv_number": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[2]/input"
+	},
+	"user_name": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[1]"
+	},
+	"user_email": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[2]"
+	},
+	"user_mobile": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/div/input"
+	},
+	"pay_via_phonepay": {
+		"xpath": "//*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')]"
+	},
+	"phone_pay_number": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[8]/form/div[1]/div[2]/div/div[1]"
+	},
+	"name_for_ticket_detail": {
+		"xpath": "//*[@class='banking']/div[1]/input[1]"
+	},
+	"email_for_ticket_detail": {
+		"xpath": "//*[@class='banking']/div[1]/input[2]"
+	},
+	"mobile_for_ticket_details": {
+		"xpath": "//*[@class='banking']/div[1]/div/input"
+	},
+	"use_pp_password": {
+		"id": "loginWithPasswordToggle"
+	},
+	"pp_login": {
+		"id": "onboardingFormSubmitBtn"
+	},
+	"pay": {
+		"xpath": "//*[@id='paySubmitButton']"
+	},
+	"phone_pay_pin": {
+		"id": "password"
+	},
+	"cc_pin": {
+		"xpath": "txtPassword"
+	},
+	"cc_submit": {
+		"xpath": "cmdSubmit"
+	},
+	"pay_with_simpl": {
+		"xpath": "//*[contains(text(),'Pay Later with Simpl')]"
+	},
+	"link_account_simpl": {
+		"xpath": "//*[contains(text(),'Link Account & Pay Later')]"
+	},
+	"pay_later": {
+		"xpath": "//*[contains(text(),'Pay Later') and @class=' enabled']"
+	},
+	"verify_payment": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[2]/div[2]/div[2]/img"
+	},
+	"verify_ticket_booking": {
+		"xpath": "//*[contains(text(),'Ticket')]"
+	},
+	"amazon_pay": {
+		"xpath": "//*[contains(text(),'Pay with  Amazon')]"
+	},
+	"pay_now_amazon": {
+		"xpath": "//*[@id='pay_now_desktop']/span/input"
+	},
+	"amazon_user": {
+		"id": "ap_email"
+	},
+	"amazon_passwprd": {
+		"id": "ap_password"
+	},
+	"amazon_singin": {
+		"id": "signInSubmit"
+	},
+	"use_saved_card_details": {
+		"xpath": "//*[contains(text(),'Use a Saved Card')]"
+	},
+	"select_saved_card": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2]"
+	},
+	"Card_CVV": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div/input"
+	},
+	"card_num_loc": {
+		"xpath": "//*[@class='card']/input[@type='tel']"
+	},
+	"expiry_date_loc": {
+		"xpath": "//*[@class='half']/input[@type='tel']"
+	},
+	"CC_CVV": {
+		"xpath": "//*[@class='half']/input[@type='password']"
+	},
+	"recharge_with_cc_dc": {
+		"xpath": "//*[contains(text(),'Recharge with  Credit / Debit card')]"
+	}
+}

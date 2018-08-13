@@ -1,0 +1,20 @@
+{
+	"is_free_seating": {
+		"xpath": "//*[@class = 'free-selection']"
+	},
+	"dynamic_seat": {
+		"xpath": "//*[contains(@data-reactid,'{0}') and contains(text(),'{1}')]"
+	},
+	"free_seating": {
+		"xpath": "//*[contains(@class,'count') and contains(text(),{0}) ]"
+	},
+	"free_seating_test": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[{0}]"
+	},
+	"book_now": {
+		"xpath": "//*[contains(text(),'Confirm in')]"
+	},
+	"verify_seat_confirmation": {
+		"xpath": "//*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span"
+	}
+}

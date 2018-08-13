@@ -1,22 +1,27 @@
-from selenium import webdriver
 from PageObjectsPackage.LoginPageJT import LoginToJT
 from PageObjectsPackage.HomePageJT import JTHomePage
 from PageObjectsPackage.AssistedBookingJT import JTAssistedBooking
+from UtilityPackage.DriverIntialization import DriverIntialization
 from ConfigVars import variables,urls
 import unittest
 import pytest
 import time
 
 
-class JT_Functionality_validation(unittest.TestCase):
+class JTAssistedBookings(unittest.TestCase):
+
     baseURL = urls.HOME_PAGE
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.implicitly_wait(variables.WAIT)
-    driver.get(baseURL)
-    ltj = LoginToJT(driver)
-    homePageObj = JTHomePage(driver)
-    ab = JTAssistedBooking(driver)
+
+    @classmethod
+    def setUpClass(cls):
+        driver = DriverIntialization(urls.HOME_PAGE).return_driver()
+        cls.driver = driver
+        cls.ltj = LoginToJT(driver, 'PageObjectLocator/LoginPageJT.json')
+        cls.homePageObj = JTHomePage(driver, 'PageObjectLocator/HomePageJT.json')
+        cls.ab = JTAssistedBooking(driver)
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.close()
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
     @pytest.mark.run(order =1)

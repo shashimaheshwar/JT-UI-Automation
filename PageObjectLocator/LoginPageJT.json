@@ -1,0 +1,23 @@
+{
+	"_LoginLink": {
+		"xpath": "//*/span[contains(text(),'Sign In')]"
+	},
+	"_EmailField": {
+		"id": "contact"
+	},
+	"_VerifyContact": {
+		"id": "contact_verify"
+	},
+	"_PasswordField": {
+		"id": "password"
+	},
+	"_SignInButton": {
+		"id": "signin_btn"
+	},
+	"_VerifyLogin": {
+		"xpath": "//*[contains(text(),'My Account')]"
+	},
+	"_SignOut": {
+		"xpath": "//*/span[contains(text(),'Sign Out')]"
+	}
+}

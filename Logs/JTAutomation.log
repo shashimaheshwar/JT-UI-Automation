@@ -1,50 +1,38 @@
-07/31/2018 12:23:16 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[2]/div/div/div[2]/span and  locatorType: xpath
-07/31/2018 12:23:16 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[2]/div/div/div[2]/span locatorType: xpath
-07/31/2018 12:23:16 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[2]/div[2]/input and  locatorType: xpath
-07/31/2018 12:23:17 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[2]/div[2]/input locatorType: xpath
-07/31/2018 12:23:17 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[2]/div[3]/div/div[2]/span[1] and  locatorType: xpath
-07/31/2018 12:23:17 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[2]/div[3]/div/div[2]/span[1] locatorType: xpath
-07/31/2018 12:23:20 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[1]/div/div/div[2]/span and  locatorType: xpath
-07/31/2018 12:23:20 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[1]/div/div/div[2]/span locatorType: xpath
-07/31/2018 12:23:20 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[1]/div[2]/input and  locatorType: xpath
-07/31/2018 12:23:20 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[1]/div[2]/input locatorType: xpath
-07/31/2018 12:23:20 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[1]/div[3]/div/div[2]/span[1] and  locatorType: xpath
-07/31/2018 12:23:20 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[1]/div[2]/div/div[1]/div[3]/div/div[2]/span[1] locatorType: xpath
-07/31/2018 12:23:23 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-07/31/2018 12:23:23 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-07/31/2018 12:23:23 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a and  locatorType: xpath
-07/31/2018 12:23:24 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a locatorType: xpath
-07/31/2018 12:23:30 PM - SeleniumDriver - INFO: Element not found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-07/31/2018 12:23:30 PM - SeleniumDriver - INFO: Element not present with locator: //*[@class = 'free-selection'] locatorType: xpath
-07/31/2018 12:23:30 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A15')] and  locatorType: xpath
-07/31/2018 12:23:30 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A15')] locatorType: xpath
-07/31/2018 12:23:33 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-07/31/2018 12:23:33 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-07/31/2018 12:23:36 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-07/31/2018 12:23:36 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-07/31/2018 12:23:42 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-07/31/2018 12:23:42 PM - SeleniumDriver - INFO: Element not present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-07/31/2018 12:23:45 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[1] and  locatorType: xpath
-07/31/2018 12:23:45 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[1] locatorType: xpath
-07/31/2018 12:23:48 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/input and  locatorType: xpath
-07/31/2018 12:23:48 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/input locatorType: xpath
-07/31/2018 12:23:48 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[1]/input and  locatorType: xpath
-07/31/2018 12:23:48 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[1]/input locatorType: xpath
-07/31/2018 12:23:48 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[2]/input and  locatorType: xpath
-07/31/2018 12:23:48 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div[2]/input locatorType: xpath
-07/31/2018 12:23:48 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[1] and  locatorType: xpath
-07/31/2018 12:23:49 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[1] locatorType: xpath
-07/31/2018 12:23:49 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[2] and  locatorType: xpath
-07/31/2018 12:23:49 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/input[2] locatorType: xpath
-07/31/2018 12:23:49 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/div/input and  locatorType: xpath
-07/31/2018 12:23:49 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[3]/div/input locatorType: xpath
-07/31/2018 12:23:49 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-07/31/2018 12:23:49 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-07/31/2018 12:23:52 PM - SeleniumDriver - INFO: Element found with locator: txtPassword and  locatorType: id
-07/31/2018 12:23:52 PM - SeleniumDriver - INFO: Sent data on element with locator: txtPassword locatorType: id
-07/31/2018 12:23:52 PM - SeleniumDriver - INFO: Element found with locator: cmdSubmit and  locatorType: id
-07/31/2018 12:23:55 PM - SeleniumDriver - INFO: Clicked on element with locator: cmdSubmit locatorType: id
-07/31/2018 12:24:04 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-07/31/2018 12:24:04 PM - SeleniumDriver - INFO: Element not present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-07/31/2018 12:24:04 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Ticket')] and  locatorType: xpath
-07/31/2018 12:24:04 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Ticket')] locatorType: xpath
+08/13/2018 12:30:28 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
+08/13/2018 12:30:28 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
+08/13/2018 12:30:28 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
+08/13/2018 12:30:28 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
+08/13/2018 12:30:28 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] and  locatorType: xpath
+08/13/2018 12:30:28 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] locatorType: xpath
+08/13/2018 12:30:31 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
+08/13/2018 12:30:31 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
+08/13/2018 12:30:31 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
+08/13/2018 12:30:31 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
+08/13/2018 12:30:31 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Kapoor & Sons')] and  locatorType: xpath
+08/13/2018 12:30:31 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Kapoor & Sons')] locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a and  locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Element found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Element present with locator: //*[@class = 'free-selection'] locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] and  locatorType: xpath
+08/13/2018 12:30:35 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] locatorType: xpath
+08/13/2018 12:30:38 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
+08/13/2018 12:30:38 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
+08/13/2018 12:30:43 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
+08/13/2018 12:30:43 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
+08/13/2018 12:30:46 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
+08/13/2018 12:30:46 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
+08/13/2018 12:30:46 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
+08/13/2018 12:30:46 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
+08/13/2018 12:30:49 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[1] and  locatorType: xpath
+08/13/2018 12:30:49 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[1] locatorType: xpath
+08/13/2018 12:30:52 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Use a Saved Card')] and  locatorType: xpath
+08/13/2018 12:30:52 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Use a Saved Card')] locatorType: xpath
+08/13/2018 12:30:55 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2] and  locatorType: xpath
+08/13/2018 12:30:55 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2] locatorType: xpath
+08/13/2018 12:30:58 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div/input and  locatorType: xpath
+08/13/2018 12:30:58 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[2]/div/input locatorType: xpath
+08/13/2018 12:30:58 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
+08/13/2018 12:30:58 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath

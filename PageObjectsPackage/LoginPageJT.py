@@ -1,6 +1,6 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
 import UtilityPackage.CustomLogger as cl
-import logging
+import logging,json
 
 """
 LoginToJT class : Page class which contains all the methods and variables. 
@@ -14,37 +14,30 @@ class LoginToJT(SeleniumDriver):
 
     log = cl.customLogger(logging.DEBUG)
 
-    def __init__(self, driver):
+    def __init__(self, driver, locator):
         #super().__init__(driver)
         self.driver = driver
-
-    #Locators in login page for JT              Locator types for reference
-
-    _LoginLink = "//*/span[contains(text(),'Sign In')]"              #xpath
-    _EmailField = "contact"                     #id
-    _VerifyContact = "contact_verify"           #id
-    _PasswordField = "password"                 #id
-    _SignInButton = "signin_btn"                #id
-    _VerifyLogin = "//*[contains(text(),'My Account')]"            #xpath
-    _SignOut = "//*/span[contains(text(),'Sign Out')]"
+        with open(locator) as f:
+            data = json.load(f)
+        self.locator = data
 
     def ClickLoginLink(self):
-        self.elementClick(self._LoginLink, locatorType="xpath")
+        self.elementClick(self.locator["_LoginLink"]["xpath"], locatorType="xpath")
 
     def FillEmailField(self, email):
-        self.sendKeys(email, self._EmailField, locatorType="id")
+        self.sendKeys(email, self.locator["_EmailField"]["id"], locatorType="id")
 
     def VerifyContact(self):
-        self.elementClick(self._VerifyContact, locatorType="id")
+        self.elementClick(self.locator["_VerifyContact"]["id"], locatorType="id")
 
     def FillPasswordField(self, password):
-        self.sendKeys(password, self._PasswordField, locatorType="id")
+        self.sendKeys(password, self.locator["_PasswordField"]["id"], locatorType="id")
 
     def ClickSignInbutton(self):
-        self.elementClick(self._SignInButton, locatorType="id")
+        self.elementClick(self.locator["_SignInButton"]["id"], locatorType="id")
 
     def VerifyLogin(self):
-        element = self.isElementPresent(self._VerifyLogin, locatorType="xpath")
+        element = self.isElementPresent(self.locator["_VerifyLogin"]["xpath"], locatorType="xpath")
         return element
 
     def UserLogin(self, email, password):
@@ -75,6 +68,6 @@ class LoginToJT(SeleniumDriver):
     def signout_feature(self):
         try:
             self.log.info("Signing out from JT")
-            self.elementClick(self._SignOut,locatorType="xpath")
+            self.elementClick(self.locator["_SignOut"]["xpath"],locatorType="xpath")
         except:
             self.log.error("Unable to sign out from JT")

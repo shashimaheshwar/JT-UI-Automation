@@ -1,0 +1,61 @@
+{
+	"day_of_release": {
+		"xpath": "//*[contains(text(),'Day of Release')]"
+	},
+	"select_day": {
+		"xpath": "//*[contains(text(),'Day of Week')]"
+	},
+	"select_timing": {
+		"xpath": "//*[contains(text(),'1st Day')]"
+	},
+	"show_timing": {
+		"xpath": "//*[contains(text(),'{0}')]/span[contains(text(),'{1}')]"
+	},
+	"disable_advance_booking": {
+		"xpath": "//*[@class='shadow-small' and @for='NO:selectedAdvanceTokenOption']"
+	},
+	"choose_city": {
+		"xpath": ""
+	},
+	"choose_theatre": {
+		"xpath": ""
+	},
+	"enable_advance_booking": {
+		"xpath": "//*[@class='shadow-small' and @for='YES:selectedAdvanceTokenOption']"
+	},
+	"choose_class": {
+		"xpath": "//*[contains(text(),'{0}')]"
+	},
+	"confirm_class": {
+		"xpath": "/html/body/div[3]/div[2]/button[2]"
+	},
+	"choose_number_of_seat": {
+		"xpath": "//*[@class='shadow-small' and @for='{0}:selectedCount']"
+	},
+	"number_of_seats": {
+		"xpath": "//*[@class = 'values squared']/span[{0}]"
+	},
+	"not_mention_max_booking_amount": {
+		"xpath": "//*[@class='shadow-small' and @for='NO:selectedMaxAmountOption']"
+	},
+	"specify_max_booking_amount": {
+		"xpath": "//*[@class='shadow-small' and @for='YES:selectedMaxAmountOption']"
+	},
+	"pay_with_jt_simpl": {
+		"xpath": "//*[@class = 'custom-radio' and label[contains(text(),'Simpl Zero')]]/span[@class='unchecked']"
+	},
+	"terms_condition": {
+		"xpath": "//*[@class = 'prebook-tnc']/label/input"
+	},
+	"place_order": {
+		"xpath": "//*[contains(text(),'Place My Order')]"
+	},
+	"pay_with_jt_wallet": {
+		"xpath": "//*[@id='WL:selectedPaymentMode']",
+        "id":"WL:selectedPaymentMode"
+	},
+	"verify_assisted_order": {
+		"xpath": "//*[contains(text(),'Your order instruction has been successfully registered. Please note that this is not a confirmed ticket. We will notify you via SMS and email as soon as we book your ticket.')]"
+	}
+
+}
