@@ -54,10 +54,10 @@
 		"id": "password"
 	},
 	"cc_pin": {
-		"xpath": "txtPassword"
+		"id": "txtPassword"
 	},
 	"cc_submit": {
-		"xpath": "cmdSubmit"
+		"id": "cmdSubmit"
 	},
 	"pay_with_simpl": {
 		"xpath": "//*[contains(text(),'Pay Later with Simpl')]"

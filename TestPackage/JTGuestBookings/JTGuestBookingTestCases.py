@@ -32,7 +32,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.close()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "SMOKE", reason="")
     @pytest.mark.run(order=1)
     def test_booking_as_guest_user_Free_Seating_cc(self):
         self.driver.get(self.baseURL)
@@ -68,7 +68,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "SMOKE", reason="")
     @pytest.mark.run(order=2)
     def test_booking_guest_user_qota_session_CC(self):
         self.driver.get(self.baseURL)
@@ -104,7 +104,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "SANITY", reason="")
     @pytest.mark.run(order=3)
     def test_booking_guest_Advance_Free_seating_CC(self):
         self.driver.get(self.baseURL)
@@ -140,7 +140,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,NEWTEST", reason="")
     @pytest.mark.run(order=4)
     def test_booking_guest_Advance_Qota_CC(self):
         self.driver.get(self.baseURL)

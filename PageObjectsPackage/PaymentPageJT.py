@@ -71,6 +71,7 @@ class PaymentClassJT(SeleniumDriver):
         self.sendKeys(variables.USER_NAME, self.locator["user_name"]["xpath"], locatorType="xpath")
         self.sendKeys(variables.MOVIEPASS_USER_EMAIL, self.locator["user_email"]["xpath"], locatorType="xpath")
         self.sendKeys(variables.MOBILE_NUMBER, self.locator["user_mobile"]["xpath"], locatorType="xpath")
+        time.sleep(variables.WAIT)
         self.elementClick(self.locator["make_payment"]["xpath"], locatorType="xpath")
         time.sleep(variables.WAIT)
         self.sendKeys(variables.CC_PIN, self.locator["cc_pin"]["id"], locatorType="id")
