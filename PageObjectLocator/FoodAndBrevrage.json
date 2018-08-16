@@ -22,5 +22,11 @@
     },
     "decrement":{
       "xpath":"//*[@class='decrement']"
+    },
+    "mange_food":{
+      "xpath":"//*[@class='box food']"
+    },
+    "cancel_changes":{
+      "xpath":"//*[@class='box food']/span[contains(text(),'Cancel Changes')]"
     }
 }

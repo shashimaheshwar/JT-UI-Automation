@@ -1,5 +1,5 @@
-MOVIEPASS_USER_EMAIL = "shashi.maheshwar@qubecinema.com"
-MOVIEPASS_USER_PASSWORD = "root@sameen3"
+MOVIEPASS_USER_EMAIL = "shashithriller@gmail.com"
+MOVIEPASS_USER_PASSWORD = "root@sameen2"
 WAIT=3
 NUMBER_OF_SEATS=1
 TEST_TYPE = "SANITY"
