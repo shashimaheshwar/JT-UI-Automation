@@ -1,4 +1,3 @@
-from selenium import webdriver
 from PageObjectsPackage.SeatLayoutPageJT import SeatLayoutClass
 from PageObjectsPackage.LoginPageJT import LoginToJT
 from PageObjectsPackage.HomePageJT import JTHomePage
@@ -6,11 +5,10 @@ from PageObjectsPackage.PaymentPageJT import PaymentClassJT
 from PageObjectsPackage.MyAccountPage import MyAccountPageJT
 from PageObjectsPackage.CheersPageJT import CheersAndGreetingsJT
 from PageObjectsPackage.FoodAndBrevrage import FoodAndBrevrageJT
-from InputData import SessionTypeInfo
 from UtilityPackage.ExractSeatLayoutInformation import ExtractSessionID
 from UtilityPackage.DriverIntialization import DriverIntialization
 from ConfigVars.FrameworkConfig import urls
-from ConfigVars.TestConfig import variables
+from ConfigVars.TestConfig import variables,SessionTypeInfo
 from ConfigVars.TestConfig import MyAccountInputs
 import unittest
 import pytest

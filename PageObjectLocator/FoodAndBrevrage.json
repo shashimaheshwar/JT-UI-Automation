@@ -1,5 +1,26 @@
 {
 	"skip_cheers": {
 		"xpath": "//*[contains(text(),'Skip F&B and Pay')]"
-	}
+	},
+    "confirm_order":{
+      "xpath":"//*[@class='box progress enabled']/span[contains(text(),'Confirm Order')]"
+    },
+
+	"food_details": {
+      "xpath":"//*[@class='food-details']"
+    },
+    "fnb_itemList":{
+      "xpath": "//*[@class='food-details']/*[@class='header']"
+    },
+
+    "food_item": {
+      "xpath":"/*[@class='header' and contains(text(),'{0}')]"
+    },
+
+    "increment":{
+      "xpath":"//*[@class='increment']"
+    },
+    "decrement":{
+      "xpath":"//*[@class='decrement']"
+    }
 }

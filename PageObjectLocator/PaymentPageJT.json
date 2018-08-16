@@ -72,7 +72,7 @@
 		"xpath": "//*[@id='justickets']/div/div[2]/div/div[2]/div[2]/div[2]/img"
 	},
 	"verify_ticket_booking": {
-		"xpath": "//*[contains(text(),'Ticket')]"
+		"xpath": "//*[contains(text(),'Thank you for choosing')]"
 	},
 	"amazon_pay": {
 		"xpath": "//*[contains(text(),'Pay with  Amazon')]"
@@ -96,7 +96,7 @@
 		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2]"
 	},
 	"Card_CVV": {
-		"xpath": "//*/div[@class='half']/input[@autocomplete='cc-csc']"
+		"xpath": "//*[@type='password']"
 	},
 	"card_num_loc": {
 		"xpath": "//*[@class='card']/input[@type='tel']"
