@@ -60,15 +60,16 @@ class FoodAndBrevrageJT(SeleniumDriver):
         parent_elem = self.getElements(self.locator["food_details"]["xpath"], locatorType="xpath")
         for parent_element in parent_elem:
             self.log.info("Getting all  child attribute of food details")
-            if parent_element.find_element_by_class_name('header').text in item:
-                self.log.info("Checking particular item exist in the Item lists")
-                for itr in range(count):
-                    self.log.info("Adding the f&b item as per input")
-                    parent_element.find_element_by_class_name('increment').click()
-                    time.sleep(5)
-                    self.log.info("FnB item added successfully")
-            else:
-                self.log.info("F&B item requested could not added as it is not available")
+            for food_item in item:
+                if parent_element.find_element_by_class_name('header').text in food_item:
+                    self.log.info("Checking particular item exist in the Item lists")
+                    for itr in range(count):
+                        self.log.info("Adding the f&b item as per input")
+                        parent_element.find_element_by_class_name('increment').click()
+                        time.sleep(5)
+                        self.log.info("FnB item added successfully")
+                else:
+                    self.log.info("F&B item requested could not added as it is not available")
 
     def remove_fnb_items(self, item, count):
         self.log.info("Getting the all Food details")
@@ -84,6 +85,22 @@ class FoodAndBrevrageJT(SeleniumDriver):
                     self.log.info("FnB item removed successfully")
             else:
                 self.log.info("F&B item requested could not removed as it is not available")
+
+    def remove_fnb_items_list(self, item,count):
+        self.log.info("Getting the all Food details")
+        parent_elem = self.getElements(self.locator["food_details"]["xpath"], locatorType="xpath")
+        for parent_element in parent_elem:
+            self.log.info("Getting all  child attribute of food details")
+            for food_item in item:
+                if parent_element.find_element_by_class_name('header').text in food_item:
+                    self.log.info("Checking particular item exist in the Item lists")
+                    for itr in range(count):
+                        self.log.info("Adding the f&b item as per input")
+                        parent_element.find_element_by_class_name('decrement').click()
+                        time.sleep(5)
+                        self.log.info("FnB item added successfully")
+                else:
+                    self.log.info("F&B item requested could not added as it is not available")
 
     def manage_order(self):
         self.log.info("Going back to the F&B page to mange the orders")

@@ -1,43 +1,103 @@
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Getting the all Food details
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[@class='food-details'] and  locatorType: xpath
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Checking particular item exist in the Item lists
-08/16/2018 05:52:00 PM - FoodAndBrevrageJT - INFO: Adding the f&b item as per input
-08/16/2018 05:52:05 PM - FoodAndBrevrageJT - INFO: FnB item added successfully
-08/16/2018 05:52:05 PM - FoodAndBrevrageJT - INFO: Adding the f&b item as per input
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: FnB item added successfully
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Confirming the orders
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[@class='box progress enabled']/span[contains(text(),'Confirm Order')] and  locatorType: xpath
-08/16/2018 05:52:11 PM - FoodAndBrevrageJT - INFO: Clicked on element with locator: //*[@class='box progress enabled']/span[contains(text(),'Confirm Order')] locatorType: xpath
-xpath
-08/16/2018 05:52:24 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-08/16/2018 05:52:24 PM - SeleniumDriver - INFO: Cannot click on the element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-08/16/2018 05:52:37 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-08/16/2018 05:52:37 PM - SeleniumDriver - INFO: Element not present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-08/16/2018 05:52:47 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-08/16/2018 05:52:47 PM - SeleniumDriver - INFO: Element not present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
+08/17/2018 11:13:46 AM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
+08/17/2018 11:13:46 AM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
+08/17/2018 11:13:46 AM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
+08/17/2018 11:13:46 AM - FoodAndBrevrageJT - INFO: Getting the all Food details
+08/17/2018 11:13:46 AM - FoodAndBrevrageJT - INFO: Element found with locator: //*[@class='food-details'] and  locatorType: xpath
+08/17/2018 11:13:46 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:13:47 AM - FoodAndBrevrageJT - INFO: Checking particular item exist in the Item lists
+08/17/2018 11:13:47 AM - FoodAndBrevrageJT - INFO: Adding the f&b item as per input
+08/17/2018 11:13:52 AM - FoodAndBrevrageJT - INFO: FnB item added successfully
+08/17/2018 11:13:52 AM - FoodAndBrevrageJT - INFO: Adding the f&b item as per input
+08/17/2018 11:13:57 AM - FoodAndBrevrageJT - INFO: FnB item added successfully
+08/17/2018 11:13:57 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:13:57 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:13:57 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:13:57 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:13:57 AM - FoodAndBre08/17/2018 11:14:42 AM - LoginToJT - INFO: Signing out from JT
+08/17/2018 11:14:42 AM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
+08/17/2018 11:14:43 AM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath
+08/17/2018 11:14:45 AM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
+08/17/2018 11:14:45 AM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
+08/17/2018 11:14:45 AM - LoginToJT - INFO: Entering the MoviePass User name
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Element found with locator: contact and  locatorType: id
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Sent data on element with locator: contact locatorType: id
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Verifying the MoviePass User name
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Element found with locator: contact_verify and  locatorType: id
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Clicked on element with locator: contact_verify locatorType: id
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Element found with locator: password and  locatorType: id
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Sent data on element with locator: password locatorType: id
+08/17/2018 11:14:46 AM - LoginToJT - INFO: Sigin to JT via Movie Pass user
+08/17/2018 11:14:47 AM - LoginToJT - INFO: Element found with locator: signin_btn and  locatorType: id
+08/17/2018 11:14:47 AM - LoginToJT - INFO: Clicked on element with locator: signin_btn locatorType: id
+08/17/2018 11:14:52 AM - LoginToJT - INFO: Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
+08/17/2018 11:14:52 AM - LoginToJT - INFO: Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
+08/17/2018 11:15:35 AM - LoginToJT - INFO: Signing out from JT
+08/17/2018 11:15:36 AM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
+08/17/2018 11:15:38 AM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath
+17/2018 11:14:21 AM - SeleniumDriver - INFO: Element found with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] and  locatorType: xpath
+08/17/2018 11:14:21 AM - SeleniumDriver - INFO: Clicked on element with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] locatorType: xpath
+08/17/2018 11:14:24 AM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Use a Saved Card')] and  locatorType: xpath
+08/17/2018 11:14:24 AM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Use a Saved Card')] locatorType: xpath
+08/17/2018 11:14:27 AM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2] and  locatorType: xpath
+08/17/2018 11:14:27 AM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2] locatorType: xpath
+08/17/2018 11:14:30 AM - SeleniumDriver - INFO: Element found with locator: //*[@type='password'] and  locatorType: xpath
+08/17/2018 11:14:30 AM - SeleniumDriver - INFO: Sent data on element with locator: //*[@type='password'] locatorType: xpath
+08/17/2018 11:14:30 AM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
+08/17/2018 11:14:30 AM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
+08/17/2018 11:14:33 AM - SeleniumDriver - INFO: Element found with locator: txtPassword and  locatorType: id
+08/17/2018 11:14:33 AM - SeleniumDriver - INFO: Sent data on element with locator: txtPassword locatorType: id
+08/17/2018 11:14:33 AM - SeleniumDriver - INFO: Element found with locator: cmdSubmit and  locatorType: id
+08/17/2018 11:14:36 AM - SeleniumDriver - INFO: Clicked on ele08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Getting the all Food details
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Element found with locator: //*[@class='food-details'] and  locatorType: xpath
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Checking particular item exist in the Item lists
+08/17/2018 11:15:09 AM - FoodAndBrevrageJT - INFO: Adding the f&b item as per input
+08/17/2018 11:15:14 AM - FoodAndBrevrageJT - INFO: FnB item added successfully
+08/17/2018 11:15:14 AM - FoodAndBrevrageJT - INFO: Adding the f&b item as per input
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: FnB item added successfully
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not added as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting the all Food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Element found with locator: //*[@class='food-details'] and  locatorType: xpath
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not removed as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: F&B item requested could not removed as it is not available
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Checking particular item exist in the Item lists
+08/17/2018 11:15:19 AM - FoodAndBrevrageJT - INFO: Adding the f&b item as per input
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: FnB item removed successfully
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: F&B item requested could not removed as it is not available
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: F&B item requested could not removed as it is not available
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: F&B item requested could not removed as it is not available
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: F&B item requested could not removed as it is not available
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: Getting all  child attribute of food details
+08/17/2018 11:15:24 AM - FoodAndBrevrageJT - INFO: F&B item requested could not removed as it is08/17/2018 11:15:28 AM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
+08/17/2018 11:15:28 AM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
+08/17/2018 11:15:35 AM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+08/17/2018 11:15:35 AM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+08/17/2018 11:15:35 AM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+08/17/2018 11:15:35 AM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+08/17/2018 11:15:35 AM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
+08/17/2018 11:15:35 AM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath

@@ -77,7 +77,7 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
     @pytest.mark.run(order=2)
     def test_booking_add_fnb_item_list_with_tickets(self):
         self.driver.get(self.baseURL)
