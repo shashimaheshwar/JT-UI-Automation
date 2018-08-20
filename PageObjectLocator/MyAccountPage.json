@@ -40,5 +40,9 @@
 	},
 	"booking_history_tab": {
 		"xpath": "//*[contains(text(),'Booking History')]"
+	},
+
+	"add_food":{
+		"xpath":"//*[@class='actions' and contains(text(),'Add Food')]"
 	}
 }

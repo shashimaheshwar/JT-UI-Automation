@@ -74,3 +74,8 @@ class MyAccountPageJT(SeleniumDriver):
             self.log.error("Account statement didn't loaded in time")
 
         return self.get_value_of_element(self.locator["last_entry_to_statement"]["xpath"], locatorType="xpath")
+
+    def add_food(self):
+        self.log.info("Adding Food and Beverage item Separately")
+        self.elementClick(self.locator["add_food"]["xpath"], locatorType="xpath")
+

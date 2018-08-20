@@ -50,7 +50,7 @@ class FoodAndBrevrageJT(SeleniumDriver):
                 for itr in range(count):
                     self.log.info("Adding the f&b item as per input")
                     parent_element.find_element_by_class_name('increment').click()
-                    time.sleep(5)
+                    time.sleep(2)
                     self.log.info("FnB item added successfully")
             else:
                 self.log.info("F&B item requested could not added as it is not available")
@@ -66,7 +66,7 @@ class FoodAndBrevrageJT(SeleniumDriver):
                     for itr in range(count):
                         self.log.info("Adding the f&b item as per input")
                         parent_element.find_element_by_class_name('increment').click()
-                        time.sleep(5)
+                        time.sleep(2)
                         self.log.info("FnB item added successfully")
                 else:
                     self.log.info("F&B item requested could not added as it is not available")
@@ -81,7 +81,7 @@ class FoodAndBrevrageJT(SeleniumDriver):
                 for itr in range(count):
                     self.log.info("Adding the f&b item as per input")
                     parent_element.find_element_by_class_name('decrement').click()
-                    time.sleep(5)
+                    time.sleep(2)
                     self.log.info("FnB item removed successfully")
             else:
                 self.log.info("F&B item requested could not removed as it is not available")
@@ -97,7 +97,7 @@ class FoodAndBrevrageJT(SeleniumDriver):
                     for itr in range(count):
                         self.log.info("Adding the f&b item as per input")
                         parent_element.find_element_by_class_name('decrement').click()
-                        time.sleep(5)
+                        time.sleep(2)
                         self.log.info("FnB item added successfully")
                 else:
                     self.log.info("F&B item requested could not added as it is not available")

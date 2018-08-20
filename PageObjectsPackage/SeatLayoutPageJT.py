@@ -1,5 +1,5 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
-import json
+import json,time
 
 
 class SeatLayoutClass(SeleniumDriver):
@@ -15,6 +15,7 @@ class SeatLayoutClass(SeleniumDriver):
         self.elementClick(self.locator["book_now"]["xpath"], locatorType="xpath")
 
     def select_seats(self, seat_type, seat_number):
+        time.sleep(5)
         self.elementClick(self.locator["dynamic_seat"]["xpath"].format(seat_type, seat_number), locatorType="xpath")
 
     def verify_seat(self):

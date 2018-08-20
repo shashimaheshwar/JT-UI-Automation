@@ -93,7 +93,7 @@
 		"xpath": "//*[contains(text(),'Use a Saved Card')]"
 	},
 	"select_saved_card": {
-		"xpath": "//*[@id='justickets']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/form/div[1]/div[2]"
+		"xpath":"//*[contains(text(),'VISA')]"
 	},
 	"Card_CVV": {
 		"xpath": "//*[@type='password']"
