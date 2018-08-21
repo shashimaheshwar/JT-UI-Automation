@@ -32,7 +32,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.close()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=1)
     def test_booking_as_guest_user_Free_Seating_cc(self):
         self.driver.get(self.baseURL)
@@ -68,7 +68,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=2)
     def test_booking_guest_user_qota_session_CC(self):
         self.driver.get(self.baseURL)
@@ -104,7 +104,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=3)
     def test_booking_guest_Advance_Free_seating_CC(self):
         self.driver.get(self.baseURL)
@@ -320,7 +320,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,TEST", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "TEST", reason="")
     @pytest.mark.run(order=9)
     def test_booking_as_guest_user_pay_with_amazon(self):
         self.driver.get(self.baseURL)
@@ -356,7 +356,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,TESTING", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "TESTING", reason="")
     @pytest.mark.run(order=10)
     def test_booking_guest_user_qota_session_pay_amazon(self):
         self.driver.get(self.baseURL)

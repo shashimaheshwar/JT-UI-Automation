@@ -33,7 +33,7 @@
 		"id": "mobileNumber"
 	},
 	"name_for_ticket_detail": {
-		"xpath": "//*/input[@data-reactid='.0.1.$orders.5.0.1.9.3.0.1"
+		"xpath": "//*[contains(text(),'Name')]/../input[@class='prefilled undefined' and not(@type='email')]"
 	},
 	"email_for_ticket_detail": {
 		"xpath": "//*/input[@type='email' and @class='prefilled undefined']"

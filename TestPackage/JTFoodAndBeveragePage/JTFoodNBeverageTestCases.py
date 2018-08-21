@@ -6075,3 +6075,4 @@ class JTFnBTestClass(unittest.TestCase):
         self.pay.pay_with_amazon()
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
+
