@@ -65,6 +65,10 @@
 	"select_session": {
 		"xpath": "//*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a"
 	},
+    "select_session_by_id":{
+      "xpath":"//*[@class='schedule available' and contains(@href,'{0}')]"
+    },
+
 	"user_avatar_text": {
 		"xpath": "//*[@id='justickets']/div/div[1]/div[1]/div/a[4]/span"
 	},

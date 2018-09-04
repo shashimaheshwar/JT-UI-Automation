@@ -48,6 +48,9 @@ class JTHomePage(SeleniumDriver):
     def select_movie_session(self):
         self.elementClick(self.locator["select_session"]["xpath"], locatorType="xpath")
 
+    def select_movie_by_session_id(self, session_id):
+        self.elementClick(self.locator["select_session_by_id"]["xpath"].format(session_id), locatorType="xpath")
+
     def jus_tickets_home(self):
         self.elementClick(self.locator["justickets_home"]["xpath"], locatorType="xpath")
 

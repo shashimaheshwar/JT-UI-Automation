@@ -8,7 +8,7 @@ from PageObjectsPackage.FoodAndBrevrage import FoodAndBrevrageJT
 from UtilityPackage.ExractSeatLayoutInformation import ExtractSessionID
 from UtilityPackage.DriverIntialization import DriverIntialization
 from ConfigVars.FrameworkConfig import urls
-from ConfigVars.TestConfig import variables,SessionTypeInfo
+from ConfigVars.TestConfig import variables,SessionTypeInfo,PaymentMethodControl
 from ConfigVars.TestConfig import FoodAndBeverageData
 import unittest
 import pytest
@@ -40,6 +40,7 @@ class JTFnBTestClass(unittest.TestCase):
     @pytest.mark.run(order=1)
     def test_booking_fnb_items_with_tickets_pay_cc_card_advance_Free_Seating(self):
         self.driver.get(self.baseURL)
+
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
         time.sleep(5)
         result = self.ltj.VerifyLogin()

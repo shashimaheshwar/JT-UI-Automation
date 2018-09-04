@@ -66,3 +66,19 @@ def search_session(Query, sessionContainter):
             if sessions not in result:
                 result.append(sessions)
     return result
+
+'''sc=Build_Session_Container(200)
+Free_Seating_movie_dic={}
+list_of_ob=search_session({"type":"REALTIME","theatre":"Luxe: Phoenix Market City",
+                     "advance_token":False,'free_seating':True},sc)
+for element in list_of_ob:
+    if element.movie in Free_Seating_movie_dic.keys():
+        Free_Seating_movie_dic[element.movie]=Free_Seating_movie_dic[element.movie]+","+element.session_id
+    else:
+        Free_Seating_movie_dic[element.movie] = element.session_id
+
+for key,val in Free_Seating_movie_dic.items():
+    print(Free_Seating_movie_dic[key])'''
+
+
+
