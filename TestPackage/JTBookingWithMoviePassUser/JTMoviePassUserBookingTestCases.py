@@ -34,7 +34,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.close()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,TESTING", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
     @pytest.mark.run(order=1)
     def test_JT_Login(self):
         self.driver.get(self.baseURL)
@@ -44,7 +44,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
         assert result == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "SANITY", reason="")
     @pytest.mark.run(order=2)
     def test_signout_feature(self):
         self.driver.get(self.baseURL)
@@ -58,7 +58,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
         assert result == False
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY"), reason="")
     @pytest.mark.run(order=3)
     @PaymentMethodStatus.wl_payment
     def test_booking_moviepass_user_Wallet_Qota_session(self):
@@ -99,7 +99,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=4)
     @PaymentMethodStatus.wl_payment
     def test_booking_moviepass_user_Wallet_Free_seating(self):
@@ -265,7 +265,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=8)
     @PaymentMethodStatus.cc_payment
     def test_booking_moviepass_user_CC_Free_seating(self):
@@ -430,7 +430,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=12)
     @PaymentMethodStatus.pp_payment
     def test_booking_moviepass_user_PP_Free_seating(self):
@@ -471,7 +471,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=13)
     @PaymentMethodStatus.pp_payment
     def test_booking_moviepass_user_PP_Advance_Free_seating(self):
@@ -511,7 +511,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=14)
     @PaymentMethodStatus.pp_payment
     def test_booking_moviepass_user_PP_Advance_Qota(self):
@@ -551,7 +551,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE,TEST"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY"), reason="")
     @pytest.mark.run(order=15)
     @PaymentMethodStatus.simpl_payment
     def test_booking_moviepass_user_Simpl_Qota_session(self):
@@ -592,7 +592,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=16)
     @PaymentMethodStatus.simpl_payment
     def test_booking_moviepass_user_Simpl_Free_seating(self):
@@ -633,7 +633,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=17)
     @PaymentMethodStatus.simpl_payment
     def test_booking_moviepass_user_Simpl_Advance_Free_seating(self):
@@ -674,7 +674,7 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
     @pytest.mark.run(order=18)
     @PaymentMethodStatus.simpl_payment
     def test_booking_moviepass_user_Simpl_Advance_Qota(self):

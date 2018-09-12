@@ -19,12 +19,12 @@ class JTAssistedBookings(unittest.TestCase):
         cls.driver = driver
         cls.ltj = LoginToJT(driver, 'PageObjectLocator/LoginPageJT.json')
         cls.homePageObj = JTHomePage(driver, 'PageObjectLocator/HomePageJT.json')
-        cls.ab = JTAssistedBooking(driver)
+        cls.ab = JTAssistedBooking(driver,'PageObjectLocator/AssistedBookingJT.json')
     @classmethod
     def tearDownClass(cls):
         cls.driver.close()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order =1)
     def test_assisted_booking_for_not_released(self):
         self.driver.get(self.baseURL)

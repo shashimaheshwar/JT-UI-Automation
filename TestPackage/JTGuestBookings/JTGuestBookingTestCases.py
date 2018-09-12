@@ -9,6 +9,7 @@ from ConfigVars.FrameworkConfig import urls
 from ConfigVars.TestConfig import variables,SessionTypeInfo
 from UtilityPackage.DriverIntialization import DriverIntialization
 from UtilityPackage.ExractSeatLayoutInformation import ExtractSessionID
+from UtilityPackage import PaymentMethodStatus
 import unittest
 import pytest
 import time
@@ -32,8 +33,9 @@ class JTGuestBookingTestClass(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.close()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=1)
+    @PaymentMethodStatus.cc_payment
     def test_booking_as_guest_user_Free_Seating_cc(self):
         self.driver.get(self.baseURL)
         movie_theatre=SessionTypeInfo.Free_Seating
@@ -70,6 +72,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=2)
+    @PaymentMethodStatus.cc_payment
     def test_booking_guest_user_qota_session_CC(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Qota_session
@@ -106,6 +109,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=3)
+    @PaymentMethodStatus.cc_payment
     def test_booking_guest_Advance_Free_seating_CC(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Advance_Free_seating
@@ -142,6 +146,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,NEWTEST", reason="")
     @pytest.mark.run(order=4)
+    @PaymentMethodStatus.cc_payment
     def test_booking_guest_Advance_Qota_CC(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Advance_Qota
@@ -178,6 +183,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,TESTING", reason="")
     @pytest.mark.run(order=5)
+    @PaymentMethodStatus.pp_payment
     def test_booking_as_guest_user_PP(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Free_Seating
@@ -212,8 +218,9 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,REGRESSION", reason="")
     @pytest.mark.run(order=6)
+    @PaymentMethodStatus.pp_payment
     def test_booking_guest_user_qota_session_PP(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Qota_session
@@ -250,6 +257,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=7)
+    @PaymentMethodStatus.pp_payment
     def test_booking_guest_Advance_Free_seating_PP(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Advance_Free_seating
@@ -286,6 +294,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=8)
+    @PaymentMethodStatus.pp_payment
     def test_booking_guest_Advance_Qota_PP(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Advance_Qota
@@ -320,8 +329,9 @@ class JTGuestBookingTestClass(unittest.TestCase):
         else:
             assert self.pay.verify_booking_confirmation() == True
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "TEST", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=9)
+    @PaymentMethodStatus.ap_payment
     def test_booking_as_guest_user_pay_with_amazon(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Free_Seating
@@ -358,6 +368,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "TESTING", reason="")
     @pytest.mark.run(order=10)
+    @PaymentMethodStatus.ap_payment
     def test_booking_guest_user_qota_session_pay_amazon(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Qota_session
@@ -394,6 +405,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,TESTING", reason="")
     @pytest.mark.run(order=11)
+    @PaymentMethodStatus.ap_payment
     def test_booking_guest_Advance_Free_seating_pay_amazon(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Advance_Free_seating
@@ -430,6 +442,7 @@ class JTGuestBookingTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,TEST", reason="")
     @pytest.mark.run(order=12)
+    @PaymentMethodStatus.ap_payment
     def test_booking_guest_Advance_Qota_amazon_pay(self):
         self.driver.get(self.baseURL)
         movie_theatre = SessionTypeInfo.Advance_Qota

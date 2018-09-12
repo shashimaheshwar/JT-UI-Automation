@@ -10,6 +10,7 @@ from UtilityPackage.DriverIntialization import DriverIntialization
 from ConfigVars.FrameworkConfig import urls
 from ConfigVars.TestConfig import variables,SessionTypeInfo,PaymentMethodControl
 from ConfigVars.TestConfig import FoodAndBeverageData
+from UtilityPackage import PaymentMethodStatus
 import unittest
 import pytest
 import time,random
@@ -36,8 +37,9 @@ class JTFnBTestClass(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.close()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
     @pytest.mark.run(order=1)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_with_tickets_pay_cc_card_advance_Free_Seating(self):
         self.driver.get(self.baseURL)
 
@@ -78,8 +80,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=2)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_cc_card_advance_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -121,6 +124,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=3)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_advance_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -163,6 +167,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=4)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_advance_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -203,8 +208,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=5)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_update_food_cart(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -248,8 +254,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=6)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_advance_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -293,8 +300,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=7)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_separate_fnb_order_pay_cc_card_advance_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -339,8 +347,9 @@ class JTFnBTestClass(unittest.TestCase):
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
     @pytest.mark.run(order=8)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_with_tickets_pay_jt_wallet_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -380,8 +389,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=9)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -423,6 +433,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=10)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -465,6 +476,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=11)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -505,8 +517,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=12)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_update_food_cart_pay_jt_wallet_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -550,8 +563,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=13)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -595,8 +609,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=14)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_separate_fnb_order_pay_jt_wallet_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -641,8 +656,9 @@ class JTFnBTestClass(unittest.TestCase):
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
     @pytest.mark.run(order=15)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_fnb_items_with_tickets_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -682,8 +698,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=16)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -725,6 +742,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=17)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -767,6 +785,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=18)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -807,8 +826,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=19)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_update_food_cart_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -852,8 +872,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=20)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -897,8 +918,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=21)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_separate_fnb_order_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -943,8 +965,9 @@ class JTFnBTestClass(unittest.TestCase):
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
     @pytest.mark.run(order=22)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_with_tickets_pay_phonepay_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -984,8 +1007,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=23)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1027,6 +1051,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=24)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1069,6 +1094,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=25)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1109,8 +1135,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=26)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_update_food_cart_pay_phonepay_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1154,8 +1181,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=27)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1199,8 +1227,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=28)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_separate_fnb_order_pay_phonepay_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1247,6 +1276,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=29)
+    @PaymentMethodStatus.ap_payment
     def test_booking_fnb_items_with_tickets_pay_amazon_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1288,6 +1318,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
     @pytest.mark.run(order=30)
+    @PaymentMethodStatus.ap_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_amazon_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1329,6 +1360,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=31)
+    @PaymentMethodStatus.ap_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1371,6 +1403,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=32)
+    @PaymentMethodStatus.ap_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1411,8 +1444,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=33)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_update_food_cart_pay_amazon_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1456,8 +1490,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=34)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_amazon_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1501,8 +1536,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=35)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_separate_fnb_order_pay_amazon_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1548,6 +1584,7 @@ class JTFnBTestClass(unittest.TestCase):
         self.ltj.signout_feature()
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=36)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_with_tickets_pay_cc_card_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1587,8 +1624,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,JT_", reason="")
     @pytest.mark.run(order=37)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_cc_card_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1630,6 +1668,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=38)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1672,6 +1711,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=39)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1712,8 +1752,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=40)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_update_food_cart_pay_cc_card_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1757,8 +1798,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=41)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1802,8 +1844,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=42)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_separate_fnb_order_pay_cc_card_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1850,6 +1893,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=43)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_with_tickets_pay_jt_wallet_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1889,8 +1933,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,JT_", reason="")
     @pytest.mark.run(order=44)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1932,6 +1977,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=45)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -1974,6 +2020,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=46)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2014,8 +2061,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=47)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_update_food_cart_pay_jt_wallet_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2059,8 +2107,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=48)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2104,8 +2153,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=49)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_separate_fnb_order_pay_jt_wallet_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2152,6 +2202,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=50)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_with_tickets_pay_simpl_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2191,8 +2242,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=51)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_simpl_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2234,6 +2286,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=52)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2276,6 +2329,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=53)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2316,8 +2370,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=54)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_update_food_cart_pay_simpl_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2361,8 +2416,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=55)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2406,8 +2462,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=56)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_separate_fnb_order_pay_simpl_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2454,6 +2511,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=57)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_with_tickets_pay_phonepay_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2493,8 +2551,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=58)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2536,6 +2595,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=59)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2578,6 +2638,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=60)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2618,8 +2679,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=61)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_update_food_cart_pay_phonepay_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2663,8 +2725,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=62)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2708,8 +2771,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=63)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_separate_fnb_order_pay_phonepay_Free_Seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2756,6 +2820,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=64)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_with_tickets_pay_amazon_free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2795,8 +2860,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=65)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_amazon_free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2838,6 +2904,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=66)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2880,6 +2947,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=67)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2920,8 +2988,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=68)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_update_food_cart_pay_amazon_free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -2965,8 +3034,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=69)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_amazon_free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3010,8 +3080,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=70)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_separate_fnb_order_pay_amazon_free_seating(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3059,6 +3130,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=71)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_with_tickets_pay_cc_card_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3098,8 +3170,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=72)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_cc_card_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3141,6 +3214,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=73)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3183,6 +3257,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=74)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3223,8 +3298,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=75)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_update_food_cart_pay_cc_card_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3268,8 +3344,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=76)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3313,8 +3390,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=77)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_separate_fnb_order_pay_cc_card_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3360,6 +3438,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=78)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_with_tickets_pay_jt_wallet_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3399,8 +3478,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=79)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3442,6 +3522,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=80)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3484,6 +3565,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=81)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3524,8 +3606,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=82)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_update_food_cart_pay_jt_wallet_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3571,6 +3654,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=83)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3614,8 +3698,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=84)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_separate_fnb_order_pay_jt_wallet_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3662,6 +3747,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=85)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_fnb_items_with_tickets_pay_simpl_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3701,8 +3787,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=86)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_simpl_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3744,6 +3831,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=87)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3786,6 +3874,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=88)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3826,8 +3915,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=89)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_update_food_cart_pay_simpl_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3871,8 +3961,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=90)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3916,8 +4007,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=91)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_separate_fnb_order_pay_simpl_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -3964,6 +4056,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=92)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_with_tickets_pay_phonepay_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4003,8 +4096,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=93)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4046,6 +4140,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=94)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4088,6 +4183,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=95)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4128,8 +4224,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=96)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_update_food_cart_pay_phonepay_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4175,6 +4272,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SKIP", reason="")
     @pytest.mark.run(order=97)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4218,8 +4316,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=98)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_separate_fnb_order_pay_phonepay_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4266,6 +4365,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=99)
+    @PaymentMethodStatus.ap_payment
     def test_booking_fnb_items_with_tickets_pay_amazon_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4305,8 +4405,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=100)
+    @PaymentMethodStatus.ap_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_amazon_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4348,6 +4449,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=101)
+    @PaymentMethodStatus.ap_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4390,6 +4492,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=102)
+    @PaymentMethodStatus.ap_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4430,8 +4533,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=103)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_update_food_cart_pay_amazon_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4475,8 +4579,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=104)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_amazon_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4520,8 +4625,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=105)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_separate_fnb_order_pay_amazon_Qota_session(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4569,6 +4675,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=106)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_with_tickets_pay_cc_card_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4608,8 +4715,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=107)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_cc_card_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4651,6 +4759,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=108)
+    @PaymentMethodStatus.cc_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4693,6 +4802,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=109)
+    @PaymentMethodStatus.cc_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4733,8 +4843,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=110)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_update_food_cart_pay_cc_card_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4778,8 +4889,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=111)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4823,8 +4935,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=112)
+    @PaymentMethodStatus.cc_payment
     def test_booking_verify_separate_fnb_order_pay_cc_card_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4871,6 +4984,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=113)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_with_tickets_pay_jt_wallet_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4912,6 +5026,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SKIP", reason="")
     @pytest.mark.run(order=114)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4953,6 +5068,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=115)
+    @PaymentMethodStatus.wl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -4995,6 +5111,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=116)
+    @PaymentMethodStatus.wl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5035,8 +5152,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=117)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_update_food_cart_pay_jt_wallet_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5080,8 +5198,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=118)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5125,8 +5244,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=119)
+    @PaymentMethodStatus.wl_payment
     def test_booking_verify_separate_fnb_order_pay_jt_wallet_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5173,6 +5293,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=120)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_fnb_items_with_tickets_pay_simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5212,8 +5333,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=121)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5255,6 +5377,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=122)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5297,6 +5420,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=123)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5337,8 +5461,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=124)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_update_food_cart_pay_simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5382,8 +5507,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=125)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5427,8 +5553,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=126)
+    @PaymentMethodStatus.simpl_payment
     def test_booking_verify_separate_fnb_order_pay_simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5475,6 +5602,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=127)
+    @PaymentMethodStatus.pp_payment
     def test_booking_fnb_items_with_tickets_pay_phonepay_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5514,8 +5642,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=129)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5557,6 +5686,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=130)
+    @PaymentMethodStatus.ap_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5599,6 +5729,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=131)
+    @PaymentMethodStatus.pp_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5639,8 +5770,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=132)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_update_food_cart_pay_phonepay_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5684,8 +5816,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=133)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5729,8 +5862,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=134)
+    @PaymentMethodStatus.pp_payment
     def test_booking_verify_separate_fnb_order_pay_phonepay_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5777,6 +5911,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,Test", reason="")
     @pytest.mark.run(order=135)
+    @PaymentMethodStatus.ap_payment
     def test_booking_fnb_items_with_tickets_pay_amazon_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5818,6 +5953,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SKIP", reason="")
     @pytest.mark.run(order=136)
+    @PaymentMethodStatus.ap_payment
     def test_booking_add_fnb_item_list_with_tickets_pay_amazon_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5859,6 +5995,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=137)
+    @PaymentMethodStatus.ap_payment
     def test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5876,7 +6013,6 @@ class JTFnBTestClass(unittest.TestCase):
         else:
             session_d = self.driver.current_url.split("/")[-1]
             seat_info = self.utility.get_seat_avaliable(session_d)
-
             self.sl.select_seats(seat_info.split("_")[0], seat_info.split("_")[1])
         time.sleep(variables.WAIT)
         self.sl.confirm_in()
@@ -5901,6 +6037,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE", reason="")
     @pytest.mark.run(order=128)
+    @PaymentMethodStatus.ap_payment
     def test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5941,8 +6078,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=138)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_update_food_cart_pay_amazon_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -5986,8 +6124,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=139)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_cancel_changes_in_food_cart_pay_amazon_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -6031,8 +6170,9 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,SANITY", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=140)
+    @PaymentMethodStatus.ap_payment
     def test_booking_verify_separate_fnb_order_pay_amazon_Advance_Qota(self):
         self.driver.get(self.baseURL)
         self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
@@ -6076,4 +6216,3 @@ class JTFnBTestClass(unittest.TestCase):
         self.pay.pay_with_amazon()
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
-

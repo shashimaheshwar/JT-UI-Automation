@@ -1,6 +1,7 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
 import json
 
+
 class JTAssistedBooking(SeleniumDriver):
 
     def __init__(self, driver, locator):

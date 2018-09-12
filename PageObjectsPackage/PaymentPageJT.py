@@ -26,8 +26,8 @@ class PaymentClassJT(SeleniumDriver):
         self.sendKeys(variables.CVV, self.locator["CC_CVV"]["xpath"], locatorType="xpath")
         self.elementClick(self.locator["make_payment"]["xpath"], locatorType="xpath")
         time.sleep(variables.WAIT)
-        self.sendKeys(variables.CC_PIN, self.locator["cc_pin"]["xpath"], locatorType="id")
-        self.elementClick(self.locator["cc_submit"]["xpath"], locatorType="id")
+        self.sendKeys(variables.CC_PIN, self.locator["cc_pin"]["id"], locatorType="id")
+        self.elementClick(self.locator["cc_submit"]["id"], locatorType="id")
         time.sleep(variables.WAIT)
 
     def pay_with_saved_cc_dc(self):

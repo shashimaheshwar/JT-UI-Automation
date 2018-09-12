@@ -36,7 +36,7 @@ class JTMyAccountTestClass(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.close()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=1)
     def test_recharge_with_valid_amount_No_offer_CC_DC(self):
         self.driver.get(self.baseURL)
@@ -52,7 +52,7 @@ class JTMyAccountTestClass(unittest.TestCase):
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
     @pytest.mark.run(order=3)
     def test_recharge_with_valid_amount_No_offer_Gift_Coupan(self):
         self.driver.get(self.baseURL)
@@ -69,7 +69,7 @@ class JTMyAccountTestClass(unittest.TestCase):
         else:
             assert False
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
     @pytest.mark.run(order=2)
     def test_recharge_with_valid_amount_With_offer_CC_DC(self):
         self.driver.get(self.baseURL)
@@ -89,7 +89,7 @@ class JTMyAccountTestClass(unittest.TestCase):
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=4)
     def test_recharge_with_amount_button_No_offer_CC_DC(self):
         self.driver.get(self.baseURL)
@@ -105,7 +105,7 @@ class JTMyAccountTestClass(unittest.TestCase):
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
     @pytest.mark.run(order=5)
     def test_recharge_with_amount_button_With_offer_CC_DC(self):
         self.driver.get(self.baseURL)
@@ -125,7 +125,7 @@ class JTMyAccountTestClass(unittest.TestCase):
         time.sleep(variables.WAIT)
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
     @pytest.mark.run(order=6)
     def test_recharge_account_statement(self):
         self.driver.get(self.baseURL)
@@ -142,7 +142,7 @@ class JTMyAccountTestClass(unittest.TestCase):
         else:
             assert False
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY,SMOKE,TESTING", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=7)
     def test_verify_confirmed_movie(self):
         self.driver.get(self.baseURL)
@@ -150,7 +150,7 @@ class JTMyAccountTestClass(unittest.TestCase):
         time.sleep(5)
         result = self.ltj.VerifyLogin()
         assert result == True
-        movie_theatre = SessionTypeInfo.Advance_Free_seating
+        movie_theatre = SessionTypeInfo.Qota_session
         self.homePageObj.movie_filter_with_theatre(movie_theatre.split(",")[0], movie_theatre.split(",")[1])
         time.sleep(variables.WAIT)
         result = self.homePageObj.verify_movie_selection()

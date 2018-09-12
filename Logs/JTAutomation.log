@@ -1,164 +1,76 @@
-08/31/2018 05:05:49 PM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
-08/31/2018 05:05:49 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:05:49 PM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/31/2018 05:05:49 PM - FoodAndBrevrageJT - INFO: Skipping the food and beverage items
-08/31/2018 05:05:49 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:05:49 PM - FoodAndBrevrageJT - INFO: Clicked on element with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/31/2018 05:06:31 PM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
-08/31/2018 05:06:31 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:06:31 PM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/31/2018 05:06:31 PM - FoodAndBrevrageJT - INFO: Skipping the food and beverage items
-08/31/2018 05:06:31 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:06:31 PM - FoodAndBrevrageJT - INFO: Clicked on element with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/31/2018 05:07:11 PM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
-08/31/2018 05:07:11 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:07:11 PM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/31/2018 05:07:11 PM - FoodAndBrevrageJT - INFO: Skipping the food and beverage items
-08/31/2018 05:07:11 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:07:11 PM - FoodAndBrevrageJT - INFO: Clicked on element with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/31/2018 05:08:14 PM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
-08/31/2018 05:08:14 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:08:14 PM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-08/31/2018 05:08:14 PM - FoodAndBrevrageJT - INFO: Skipping the food and beverage items
-08/31/2018 05:08:14 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
-08/31/2018 05:08:19 PM - FoodAndBrevrageJT - INFO: Clicked on element with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
-INFO: Cannot click on the element with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A08')] locatorType: xpath
-08/31/2018 05:05:41 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-08/31/2018 05:05:41 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-08/31/2018 05:05:46 PM - SeleniumD08/31/2018 05:06:01 PM - LoginToJT - INFO: Signing out from JT
-08/31/2018 05:06:01 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
-08/31/2018 05:06:04 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath
-08/31/2018 05:06:05 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Entering the MoviePass User name
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Element found with locator: contact and  locatorType: id
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Sent data on element with locator: contact locatorType: id
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Verifying the MoviePass User name
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Element found with locator: contact_verify and  locatorType: id
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Clicked on element with locator: contact_verify locatorType: id
-08/31/2018 05:06:06 PM - LoginToJT - INFO: Element found with locator: password and  locatorType: id
-08/31/2018 05:06:07 PM - LoginToJT - INFO: Sent data on element with locator: password locatorType: id
-08/31/2018 05:06:07 PM - LoginToJT - INFO: Sigin to JT via Movie Pass user
-08/31/2018 05:06:07 PM - LoginToJT - INFO: Element found with locator: signin_btn and  locatorType: id
-08/31/2018 05:06:07 PM - LoginToJT - INFO: Clicked on element with locator: signin_btn locatorType: id
-08/31/2018 05:06:13 PM - LoginToJT - INFO: Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-08/31/2018 05:06:13 PM - LoginToJT - INFO: Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-08/31/2018 05:06:42 PM - LoginToJT - INFO: Signing out from JT
-08/31/2018 05:06:42 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
-08/31/2018 05:06:44 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath
-08/31/2018 05:06:45 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Entering the MoviePass User name
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Element found with locator: contact and  locatorType: id
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Sent data on element with locator: contact locatorType: id
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Verifying the MoviePass User name
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Element found with locator: contact_verify and  locatorType: id
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Clicked on element with locator: contact_verify locatorType: id
-08/31/2018 05:06:46 PM - LoginToJT - INFO: Element found with locator: password and  locatorType: id
-08/31/2018 05:06:47 PM - LoginToJT - INFO: Sent data on element with locator: password locatorType: id
-08/31/2018 05:06:47 PM - LoginToJT - INFO: Sigin to JT via Movie Pass user
-08/31/2018 05:06:47 PM - LoginToJT - INFO: Element found with locator: signin_btn and  locatorType: id
-08/31/2018 05:06:47 PM - LoginToJT - INFO: Clicked on element with locator: signin_btn locatorType: id
-08/31/2018 05:06:53 PM - LoginToJT - INFO: Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-08/31/2018 05:06:53 PM - LoginToJT - INFO: Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-08/31/2018 05:07:24 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-08/31/2018 05:07:24 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-08/31/2018 05:07:24 PM - LoginToJT - INFO: Entering the MoviePass User name
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Element found with locator: contact and  locatorType: id
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Cannot send data on the element with locator: contact locatorType: id
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Verifying the MoviePass User name
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Element not found with locator: contact_verify and  locatorType: id
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Cannot click on the element with locator: contact_verify locatorType: id
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Element not found with locator: password and  locatorType: id
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Cannot send data on the element with locator: password locatorType: id
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Sigin to JT via Movie Pass user
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Element not found with locator: signin_btn and  locatorType: id
-08/31/2018 05:07:25 PM - LoginToJT - INFO: Cannot click on the element with locator: signin_btn locatorType: id
-08/31/2018 05:07:30 PM - LoginToJT - INFO: Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-08/31/2018 05:07:30 PM - LoginToJT - INFO: Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-  locatorType: xpath
-08/31/2018 05:06:23 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-08/31/2018 05:06:28 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-08/31/2018 05:06:28 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-08/31/2018 05:06:34 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] and  locatorType: xpath
-08/31/2018 05:06:34 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] locatorType: xpath
-08/31/2018 05:06:34 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-08/31/2018 05:06:34 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-08/31/2018 05:06:35 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='paySubmitButton'] and  locatorType: xpath
-08/31/2018 05:06:35 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='paySubmitButton'] locatorType: xpath
-08/31/2018 05:06:41 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-08/31/2018 05:06:41 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-08/31/2018 05:06:42 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-08/31/2018 05:06:42 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-08/31/2018 05:06:42 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-08/31/2018 05:06:42 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
-08/31/2018 05:06:53 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-08/31/2018 05:06:53 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-08/31/2018 05:06:53 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-08/31/2018 05:06:53 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-08/31/2018 05:06:53 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] and  locatorType: xpath
-08/31/2018 05:06:53 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] locatorType: xpath
-08/31/2018 05:06:56 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-08/31/2018 05:06:56 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-08/31/2018 05:06:56 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-08/31/2018 05:06:57 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-08/31/2018 05:06:57 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Kapoor & Sons')] and  locatorType: xpath
-08/31/2018 05:06:57 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Kapoor & Sons')] locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a and  locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Element found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Element present with locator: //*[@class = 'free-selection'] locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] and  locatorType: xpath
-08/31/2018 05:07:00 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] locatorType: xpath
-08/31/2018 05:07:03 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-08/31/2018 05:07:03 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-08/31/2018 05:07:08 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-08/31/2018 05:07:08 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-08/31/2018 05:07:14 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] and  locatorType: xpath
-08/31/2018 05:07:15 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] locatorType: xpath
-08/31/2018 05:07:15 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-08/31/2018 05:07:15 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-08/31/2018 05:07:15 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='paySubmitButton'] and  locatorType: xpath
-08/31/2018 05:07:15 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='paySubmitButton'] locatorType: xpath
-08/31/2018 05:07:22 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-08/31/2018 05:07:22 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-08/31/2018 05:07:22 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-08/31/2018 05:07:22 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-08/31/2018 05:07:22 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-08/31/2018 05:07:22 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
-08/31/2018 05:07:30 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-08/31/2018 05:07:30 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-08/31/2018 05:07:30 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-08/31/2018 05:07:30 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-08/31/2018 05:07:30 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] and  locatorType: xpath
-08/31/2018 05:07:30 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] locatorType: xpath
-08/31/2018 05:07:34 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-08/31/2018 05:07:34 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-08/31/2018 05:07:34 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-08/31/2018 05:07:34 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-08/31/2018 05:07:34 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Irudhi Suttru')] and  locatorType: xpath
-08/31/2018 05:07:34 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Irudhi Suttru')] locatorType: xpath
-08/31/2018 05:07:37 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-08/31/2018 05:07:37 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-08/31/2018 05:07:37 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a and  locatorType: xpath
-08/31/2018 05:07:37 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a locatorType: xpath
-08/31/2018 05:07:47 PM - SeleniumDriver - INFO: Element not found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-08/31/2018 05:07:47 PM - SeleniumDriver - INFO: Element not present with locator: //*[@class = 'free-selection'] locatorType: xpath
-08/31/2018 05:07:52 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'B04')] and  locatorType: xpath
-08/31/2018 05:07:57 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'B04')] locatorType: xpath
-08/31/2018 05:08:00 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-08/31/2018 05:08:05 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-08/31/2018 05:08:11 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-08/31/2018 05:08:11 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-08/31/2018 05:08:32 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] and  locatorType: xpath
-08/31/2018 05:08:32 PM - SeleniumDriver - INFO: Cannot click on the element with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] locatorType: xpath
-08/31/2018 05:08:42 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-08/31/2018 05:08:42 PM - SeleniumDriver - INFO: Cannot click on the element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-08/31/2018 05:08:52 PM - SeleniumDriver - INFO: Element not found with locator: //*[@id='paySubmitButton'] and  locatorType: xpath
-08/31/2018 05:08:52 PM - SeleniumDriver - INFO: Cannot click on the element with locator: //*[@id='paySubmitButton'] locatorType: xpath
-08/31/2018 05:09:05 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-08/31/2018 05:09:05 PM - SeleniumDriver - INFO: Element not present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-08/31/2018 05:09:15 PM - SeleniumDriver - INFO: Element not found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-08/31/2018 05:09:15 PM - SeleniumDriver - INFO: Element not present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
+09/11/2018 05:56:04 PM - FoodAndBrevrageJT - INFO: Checking the existence of Food and beverage item
+09/11/2018 05:56:04 PM - FoodAndBrevrageJT - INFO: Element found with locator: //*[contains(text(),'Skip F&B and Pay')] and  locatorType: xpath
+09/11/2018 05:56:04 PM - FoodAndBrevrageJT - INFO: Element present with locator: //*[contains(text(),'Skip F&B and Pay')] locatorType: xpath
+09/11/2018 05:56:04 PM - FoodAndBrevrageJT - INFO: Skipping the food and beverage items
+09/11/2018 05:56:04 PM - FoodAndBrevrageJT - INFO: Elem09/11/2018 05:56:33 PM - MyAccountPageJT - INFO: Element found with locator: //*[contains(text(),'Booking History')] and  locatorType: xpath
+09/11/2018 05:56:33 PM - MyAccountPageJT - INFO: Clicked on element with locator: //*[contains(text(),'Booking History')] locatorType: xpath
+09/11/2018 05:56:33 PM - MyAccountPageJT - INFO: Waiting for booking history to load
+09/11/2018 05:57:14 PM - MyAccountPageJT - INFO: Element not found with locator: //*[@class='title' and contains(text(),'Fan')] and  locatorType: xpath
+09/11/2018 05:57:14 PM - MyAccountPageJT - INFO: Element not present with locator: //*[@class='title' and contains(text(),'Fan')] locatorType: xpath
+ent found with locator: //*[@class='half']/input[@type='password'] and  locatorType: xpath
+09/11/2018 05:54:36 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='half']/input[@type='password'] locatorType: xpath
+09/11/2018 05:54:36 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')]09/11/2018 05:54:47 PM - LoginToJT - INFO: Signing out from JT
+09/11/2018 05:54:47 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
+09/11/2018 05:54:48 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath
+09/11/2018 05:54:49 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
+09/11/2018 05:54:50 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
+09/11/2018 05:54:50 PM - LoginToJT09/11/2018 05:54:55 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
+09/11/2018 05:54:55 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'My Account')] locatorType: xpath
+09/11/2018 05:55:01 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Recharge with  Credit / Debit card')] and  locatorType: xpath
+09/11/2018 05:55:01 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Recharge with  Credit / Debit card')] locatorType: xpath
+09/11/2018 05:55:04 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='card']/input[@type='tel'] and  locatorType: xpath
+09/11/2018 05:55:04 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='card']/input[@type='tel'] locatorType: xpath
+09/11/2018 05:55:07 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='half']/input[@type='tel'] and  locatorType: xpath
+09/11/2018 05:55:07 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='half']/input[@type='tel'] locatorType: xpath
+09/11/2018 05:55:10 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='half']/input[@type='password'] and  locatorTy09/11/2018 05:55:21 PM - LoginToJT - INFO: Signing out from JT
+09/11/2018 05:55:21 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
+09/11/2018 05:55:22 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath
+09/11/2018 05:55:24 PM - LoginToJT - INFO: Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
+09/11/2018 05:55:24 PM - LoginToJT - INFO: Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
+09/11/2018 05:55:24 PM - LoginToJT - INFO: Entering the MoviePass User name
+09/11/2018 05:55:24 PM - LoginToJT - INFO: Element found with locator: contact and  locatorType: id
+09/11/2018 05:55:25 PM - LoginToJT - INFO: Sent data on element with locator: contact locatorType: id
+09/11/2018 05:55:25 PM - LoginToJT - INFO: Verifying t09/11/2018 05:55:31 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
+09/11/2018 05:55:31 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
+09/11/2018 05:55:31 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
+09/11/2018 05:55:31 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
+09/11/2018 05:55:31 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] and  locatorType: xpath
+09/11/2018 05:55:31 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] locatorType: xpath
+09/11/2018 05:55:34 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
+09/11/2018 05:55:34 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
+09/11/2018 05:55:34 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
+09/11/2018 05:55:34 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
+09/11/2018 05:55:34 PM - SeleniumDriver - INFO: Element found with locator: //*[@class='value']/span[contains(text(),'Fan')] and  locatorType: xpath
+09/11/2018 05:55:35 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@class='value']/span[contains(text(),'Fan')] locatorType: xpath
+09/11/2018 05:55:38 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
+09/11/2018 05:55:38 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
+09/11/2018 05:55:38 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a and  locatorType: xpath
+09/11/2018 05:55:38 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a locatorType: xpath
+09/11/2018 05:55:48 PM - SeleniumDriver - INFO: Element not found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
+09/11/2018 05:55:48 PM - SeleniumDriver - INFO: Element not present with locator: //*[@class = 'free-selection'] locatorType: xpath
+09/11/2018 05:55:53 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A11')] and  locatorType: xpath
+09/11/2018 05:55:53 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A11')] locatorType: xpath
+09/11/2018 05:55:56 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
+09/11/2018 05:55:56 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
+09/11/2018 05:56:01 PM - SeleniumDriver - INFO: Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
+09/11/2018 05:56:01 PM - SeleniumDriver - INFO: Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
+09/11/2018 05:56:07 PM - SeleniumDriver - INFO: Element found with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] and  locatorType: xpath
+09/11/2018 05:56:07 PM - SeleniumDriver - INFO: Clicked on element with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] locatorType: xpath
+09/11/2018 05:56:10 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Use a Saved Card')] and  locatorType: xpath
+09/11/2018 05:56:10 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Use a Saved Card')] locatorType: xpath
+09/11/2018 05:56:13 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'VISA')] and  locatorType: xpath
+09/11/2018 05:56:14 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'VISA')] locatorType: xpath
+09/11/2018 05:56:17 PM - SeleniumDriver - INFO: Element found with locator: //*[@type='password'] and  locatorType: xpath
+09/11/2018 05:56:17 PM - SeleniumDriver - INFO: Sent data on element with locator: //*[@type='password'] locatorType: xpath
+09/11/2018 05:56:17 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
+09/11/2018 05:56:17 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
+09/11/2018 05:56:20 PM - SeleniumDriver - INFO: Element found with locator: txtPassword and  locatorType: id
+09/11/2018 05:56:20 PM - SeleniumDriver - INFO: Sent data on element with locator: txtPassword locatorType: id
+09/11/2018 05:56:20 PM - SeleniumDriver - INFO: Element found with locator: cmdSubmit and  locatorType: id
+09/11/2018 05:56:22 PM - SeleniumDriver - INFO: Clicked on element with locator: cmdSubmit locatorType: id
+09/11/2018 05:56:28 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+09/11/2018 05:56:28 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+09/11/2018 05:56:28 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+09/11/2018 05:56:28 PM - SeleniumDriver - INFO: Clicked on element with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+09/11/2018 05:56:28 PM - SeleniumDriver - INFO: Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
+09/11/2018 05:56:28 PM - SeleniumDriver - INFO: Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
