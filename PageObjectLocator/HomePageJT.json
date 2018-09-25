@@ -80,5 +80,11 @@
 	},
 	"my_account": {
 		"xpath": "//*[contains(text(),'My Account')]"
+	},
+	"locator_date": {
+		"xpath": "//*[@class='date shadow-small undefined']"
+	},
+	"locator_session": {
+		"xpath":"//*[@class='schedule available']"
 	}
 }

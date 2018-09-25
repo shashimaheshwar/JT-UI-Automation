@@ -1,5 +1,6 @@
 SIMPL=True
-WL=False
-CC=False
-PP=False
+WL=True
+CC=True
+PP=True
 AP=True
+PT=False

@@ -674,8 +674,49 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
+    @pytest.mark.skipif((variables.TEST_TYPE not in "SANITY,REGRESSION"), reason="")
     @pytest.mark.run(order=18)
+    @PaymentMethodStatus.pt_payment
+    def test_booking_moviepass_user_Paytm_Qota_session(self):
+        self.driver.get(self.baseURL)
+        self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
+        time.sleep(5)
+        result = self.ltj.VerifyLogin()
+        assert result == True
+        movie_theatre = SessionTypeInfo.Qota_session
+        self.homePageObj.movie_filter_with_theatre(movie_theatre.split(",")[0], movie_theatre.split(",")[1])
+        time.sleep(variables.WAIT)
+        result = self.homePageObj.verify_movie_selection()
+        assert result == True
+        self.homePageObj.select_movie_session()
+        if self.sl.is_free_seating_layout():
+            self.sl.select_free_seating_seat(variables.NUMBER_OF_SEATS)
+        else:
+            session_d = self.driver.current_url.split("/")[-1]
+            seat_info = self.utility.get_seat_avaliable(session_d)
+
+            self.sl.select_seats(seat_info.split("_")[0], seat_info.split("_")[1])
+        time.sleep(variables.WAIT)
+        self.sl.confirm_in()
+        time.sleep(5)
+        result = self.sl.verify_seat()
+        assert result == True
+        time.sleep(variables.WAIT)
+        if self.fnb.verify_existence_fnb():
+            self.fnb.skip_food_brev()
+        time.sleep(variables.WAIT)
+        self.pay.pay_with_paytm()
+        time.sleep(variables.WAIT)
+        result = self.cheers.verify_ticket_booking()
+        if result:
+            self.cheers.skip_cheers_greetings()
+            assert self.pay.verify_booking_confirmation() == True
+        else:
+            assert self.pay.verify_booking_confirmation() == True
+        self.ltj.signout_feature()
+
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
+    @pytest.mark.run(order=19)
     @PaymentMethodStatus.simpl_payment
     def test_booking_moviepass_user_Simpl_Advance_Qota(self):
         self.driver.get(self.baseURL)
@@ -706,6 +747,47 @@ class JTBookingsMoviePassUser(unittest.TestCase):
             self.fnb.skip_food_brev()
         time.sleep(variables.WAIT)
         self.pay.pay_later_by_simpl()
+        time.sleep(variables.WAIT)
+        result = self.cheers.verify_ticket_booking()
+        if result:
+            self.cheers.skip_cheers_greetings()
+            assert self.pay.verify_booking_confirmation() == True
+        else:
+            assert self.pay.verify_booking_confirmation() == True
+        self.ltj.signout_feature()
+
+    @pytest.mark.skipif((variables.TEST_TYPE not in "REGRESSION"), reason="")
+    @pytest.mark.run(order=20)
+    @PaymentMethodStatus.pt_payment
+    def test_booking_moviepass_user_Paytm_Free_seating(self):
+        self.driver.get(self.baseURL)
+        self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)
+        time.sleep(5)
+        result = self.ltj.VerifyLogin()
+        assert result == True
+        movie_theatre = SessionTypeInfo.Free_Seating
+        self.homePageObj.movie_filter_with_theatre(movie_theatre.split(",")[0], movie_theatre.split(",")[1])
+        time.sleep(variables.WAIT)
+        result = self.homePageObj.verify_movie_selection()
+        assert result == True
+        self.homePageObj.select_movie_session()
+        if self.sl.is_free_seating_layout():
+            self.sl.select_free_seating_seat(variables.NUMBER_OF_SEATS)
+        else:
+            session_d = self.driver.current_url.split("/")[-1]
+            seat_info = self.utility.get_seat_avaliable(session_d)
+
+            self.sl.select_seats(seat_info.split("_")[0], seat_info.split("_")[1])
+        time.sleep(variables.WAIT)
+        self.sl.confirm_in()
+        time.sleep(5)
+        result = self.sl.verify_seat()
+        assert result == True
+        time.sleep(variables.WAIT)
+        if self.fnb.verify_existence_fnb():
+            self.fnb.skip_food_brev()
+        time.sleep(variables.WAIT)
+        self.pay.pay_with_paytm()
         time.sleep(variables.WAIT)
         result = self.cheers.verify_ticket_booking()
         if result:

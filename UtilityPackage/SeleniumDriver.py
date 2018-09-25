@@ -103,6 +103,24 @@ class SeleniumDriver():
                           " locatorType: " + locatorType)
             print_stack()
 
+    def elementClear(self, locator, locatorType="id"):
+        try:
+            element = self.getElement(locator, locatorType)
+            element.clear()
+            self.log.info("Cleared Text on element with locator: " + locator +
+                          " locatorType: " + locatorType)
+        except:
+            self.log.info("Cannot Clear text on the element with locator: " + locator +
+                          " locatorType: " + locatorType)
+            print_stack()
+
+    def element_click_with_elment(self, element):
+        try:
+            element.click()
+            self.log.info("Clicked the the Web element")
+        except:
+            self.log.info("Unable to Click the element")
+
     def sendKeys(self, data, locator, locatorType="id"):
         try:
             element = self.getElement(locator, locatorType)

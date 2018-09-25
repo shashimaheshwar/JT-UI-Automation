@@ -1,4 +1,5 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
+from selenium.webdriver.common.alert import Alert
 from ConfigVars.TestConfig import variables
 import time,json
 
@@ -126,3 +127,19 @@ class PaymentClassJT(SeleniumDriver):
             time.sleep(variables.WAIT)
             self.elementClick(self.locator["pay_now_amazon"]["xpath"], locatorType="xpath")
             time.sleep(variables.WAIT)
+
+    def pay_with_paytm(self):
+        time.sleep(variables.WAIT)
+        self.elementClick(self.locator["pay_via_paytm"]["xpath"], locatorType="xpath")
+        self.elementClick(self.locator["make_payment"]["xpath"], locatorType="xpath")
+        time.sleep(variables.LONG_WAIT)
+        iframe=self.getElement("login-iframe")
+        self.driver.switch_to_frame(iframe)
+        self.elementClear(self.locator["paytm_username"]["xpath"], locatorType="xpath")
+        self.sendKeys(variables.PAYTM_USERNAME, self.locator["paytm_username"]["xpath"], locatorType="xpath")
+        self.sendKeys(variables.PAYTM_PASSWORD, self.locator["paytm_password"]["xpath"], locatorType="xpath")
+        self.elementClick(self.locator["paytm_signin"]["xpath"], locatorType="xpath")
+        time.sleep(variables.LONG_WAIT)
+        self.elementClick(self.locator["pay_now"]["xpath"], locatorType="xpath")
+        time.sleep(variables.LONG_WAIT)
+        self.driver.switch_to_default_content()

@@ -109,5 +109,21 @@
 	},
 	"recharge_with_cc_dc": {
 		"xpath": "//*[contains(text(),'Recharge with  Credit / Debit card')]"
-	}
+	},
+    "pay_via_paytm": {
+		"xpath": "//*[@class='title' and contains(text(),'Pay with  Paytm')]"
+	},
+	"paytm_username":{
+      "xpath":"//*[@name='username']"
+    },
+    "paytm_password":{
+      "xpath":"//*[@name='password']"
+    },
+    "paytm_signin":{
+      "xpath":"//*[@class='btn btn-primary ng-binding']"
+    },
+   "pay_now":{
+     "xpath":"//*[@class='btn-fullLen' and contains(text(),'Pay Now')]"
+   }
+
 }

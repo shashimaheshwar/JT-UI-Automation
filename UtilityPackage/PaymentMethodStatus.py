@@ -6,3 +6,4 @@ pp_payment = pytest.mark.skipif(PaymentMethodControl.PP, reason="PhonePay Paymen
 simpl_payment = pytest.mark.skipif(PaymentMethodControl.SIMPL, reason="Simpl Payment Method is disabled")
 cc_payment = pytest.mark.skipif(PaymentMethodControl.CC, reason="Credit/Debit Payment Method is disabled")
 ap_payment = pytest.mark.skipif(PaymentMethodControl.AP, reason="Amazon Pay Payment Method is disabled")
+pt_payment = pytest.mark.skipif(PaymentMethodControl.PT, reason="PayTm Payment Method is disabled")

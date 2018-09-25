@@ -235,7 +235,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>JTAutomationReport.html</h1>
-    <p>Report generated on 11-Sep-2018 at 17:57:14 by<a href="https://pypi.python.org/pypi/pytest-html"> pytest-html</a> v1.19.0</p>
+    <p>Report generated on 25-Sep-2018 at 14:49:27 by<a href="https://pypi.python.org/pypi/pytest-html"> pytest-html</a> v1.19.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -251,8 +251,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>2.7.15</td></tr></table>
     <h2>Summary</h2>
-    <p>3 tests ran in 203.19 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">4 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>2 tests ran in 197.14 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">152 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -263,125 +263,1379 @@ function filter_table(elem) {
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py::JTMyAccountTestClass::test_verify_confirmed_movie</td>
-          <td class="col-duration">111.64</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;TestPackage.JTMyAccountPage.JTUserAccountPageTestCases.JTMyAccountTestClass testMethod=test_verify_confirmed_movie&gt;<br/><br/>    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")<br/>    @pytest.mark.run(order=7)<br/>    def test_verify_confirmed_movie(self):<br/>        self.driver.get(self.baseURL)<br/>        self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)<br/>        time.sleep(5)<br/>        result = self.ltj.VerifyLogin()<br/>        assert result == True<br/>        movie_theatre = SessionTypeInfo.Qota_session<br/>        self.homePageObj.movie_filter_with_theatre(movie_theatre.split(",")[0], movie_theatre.split(",")[1])<br/>        time.sleep(variables.WAIT)<br/>        result = self.homePageObj.verify_movie_selection()<br/>        assert result == True<br/>        self.homePageObj.select_movie_session()<br/>        if self.sl.is_free_seating_layout():<br/>            self.sl.select_free_seating_seat(variables.NUMBER_OF_SEATS)<br/>        else:<br/>            session_d = self.driver.current_url.split("/")[-1]<br/>            seat_info = self.utility.get_seat_avaliable(session_d)<br/>    <br/>            self.sl.select_seats(seat_info.split("_")[0], seat_info.split("_")[1])<br/>        time.sleep(variables.WAIT)<br/>        self.sl.confirm_in()<br/>        time.sleep(5)<br/>        result = self.sl.verify_seat()<br/>        assert result == True<br/>        time.sleep(variables.WAIT)<br/>        if self.fnb.verify_existence_fnb():<br/>            self.fnb.skip_food_brev()<br/>        time.sleep(variables.WAIT)<br/>        self.pay.pay_with_saved_cc_dc()<br/>        time.sleep(variables.WAIT)<br/>        result = self.cheers.verify_ticket_booking()<br/>        if result:<br/>            self.cheers.skip_cheers_greetings()<br/>            assert self.pay.verify_booking_confirmation() == True<br/>        else:<br/>            assert self.pay.verify_booking_confirmation() == True<br/>    <br/>&gt;       assert self.account.verify_last_booked_ticket(movie_theatre.split(",")[0])<br/><span class="error">E       AssertionError: assert False</span><br/><span class="error">E        +  where False = &lt;bound method MyAccountPageJT.verify_last_booked_ticket of &lt;PageObjectsPackage.MyAccountPage.MyAccountPageJT instance at 0x108252518&gt;&gt;('Fan')</span><br/><span class="error">E        +    where &lt;bound method MyAccountPageJT.verify_last_booked_ticket of &lt;PageObjectsPackage.MyAccountPage.MyAccountPageJT instance at 0x108252518&gt;&gt; = &lt;PageObjectsPackage.MyAccountPage.MyAccountPageJT instance at 0x108252518&gt;.verify_last_booked_ticket</span><br/><span class="error">E        +      where &lt;PageObjectsPackage.MyAccountPage.MyAccountPageJT instance at 0x108252518&gt; = &lt;TestPackage.JTMyAccountPage.JTUserAccountPageTestCases.JTMyAccountTestClass testMethod=test_verify_confirmed_movie&gt;.account</span><br/><br/>TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py:184: AssertionError<br/>------------------------------ Captured log call -------------------------------<br/>SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-LoginPageJT.py              56 INFO     Entering the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: contact locatorType: id
-LoginPageJT.py              58 INFO     Verifying the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact_verify and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: contact_verify locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: password and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: password locatorType: id
-LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
-SeleniumDriver.py           76 INFO     Element found with locator: signin_btn and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: signin_btn locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Fan')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Fan')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div[2]/a locatorType: xpath
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-SeleniumDriver.py          126 INFO     Element not present with locator: //*[@class = 'free-selection'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A11')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A11')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-FoodAndBrevrage.py          22 INFO     Skipping the food and beverage items
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Use a Saved Card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Use a Saved Card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'VISA')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'VISA')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@type='password'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@type='password'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: txtPassword and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: txtPassword locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: cmdSubmit and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: cmdSubmit locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Booking History')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Booking History')] locatorType: xpath
-MyAccountPage.py            22 INFO     Waiting for booking history to load
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class='title' and contains(text(),'Fan')] and  locatorType: xpath
-SeleniumDriver.py          126 INFO     Element not present with locator: //*[@class='title' and contains(text(),'Fan')] locatorType: xpath</div></td></tr></tbody>
       <tbody class="skipped results-table-row">
         <tr>
           <td class="col-result">Skipped</td>
-          <td class="col-name">TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py::JTMyAccountTestClass::test_recharge_with_valid_amount_With_offer_CC_DC::setup</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_cc_card_advance_Free_Seating::setup</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">('TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py', 71, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 39, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
       <tbody class="skipped results-table-row">
         <tr>
           <td class="col-result">Skipped</td>
-          <td class="col-name">TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py::JTMyAccountTestClass::test_recharge_with_valid_amount_No_offer_Gift_Coupan::setup</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_cc_card_advance_Free_Seating::setup</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">('TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py', 54, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 82, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
       <tbody class="skipped results-table-row">
         <tr>
           <td class="col-result">Skipped</td>
-          <td class="col-name">TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py::JTMyAccountTestClass::test_recharge_with_amount_button_With_offer_CC_DC::setup</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_advance_Free_Seating::setup</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">('TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py', 107, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 124, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
       <tbody class="skipped results-table-row">
         <tr>
           <td class="col-result">Skipped</td>
-          <td class="col-name">TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py::JTMyAccountTestClass::test_recharge_account_statement::setup</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_advance_Free_Seating::setup</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">('TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py', 127, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 167, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 210, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_advance_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 256, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_cc_card_advance_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 302, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_jt_wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 349, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 391, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 433, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 476, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_jt_wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 519, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 565, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_jt_wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 611, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 658, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 700, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 742, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 785, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 828, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 874, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 920, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_phonepay_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 967, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1009, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1051, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1094, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_phonepay_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1137, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1183, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_phonepay_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1229, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_amazon_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1276, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_amazon_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1318, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1360, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1403, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_amazon_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1446, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_amazon_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1492, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_amazon_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1538, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_cc_card_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1584, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_cc_card_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1626, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1668, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1711, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_cc_card_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1754, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1800, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_cc_card_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1846, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_jt_wallet_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1893, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1935, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 1977, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2020, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_jt_wallet_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2063, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2109, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_jt_wallet_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2155, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_simpl_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2202, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_simpl_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2244, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2286, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2329, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_simpl_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2372, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2418, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_simpl_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2464, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_phonepay_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2511, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2553, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2595, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2638, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_phonepay_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2681, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2727, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_phonepay_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2773, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_amazon_free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2820, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_amazon_free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2862, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2904, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2947, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_amazon_free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 2990, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_amazon_free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3036, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_amazon_free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3082, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_cc_card_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3130, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_cc_card_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3172, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3214, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3257, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_cc_card_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3300, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3346, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_cc_card_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3392, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_jt_wallet_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3438, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3480, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3522, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3565, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_jt_wallet_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3608, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3654, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_jt_wallet_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3700, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3747, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3789, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3831, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3874, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3917, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 3963, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4009, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_phonepay_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4056, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4098, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4140, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4183, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_phonepay_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4226, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4272, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_phonepay_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4318, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_amazon_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4365, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_amazon_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4407, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4449, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4492, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_amazon_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4535, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_amazon_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4581, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_amazon_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4627, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_cc_card_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4675, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_cc_card_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4717, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_cc_card_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4759, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_cc_card_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4802, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_cc_card_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4845, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_cc_card_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4891, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_cc_card_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4937, u'Skipped: Credit/Debit Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_jt_wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 4984, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_jt_wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5026, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_jt_wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5068, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_jt_wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5111, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_jt_wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5154, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_jt_wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5200, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_jt_wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5246, u'Skipped: Wallet Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5293, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5335, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5377, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5420, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5463, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5509, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5555, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_phonepay_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5602, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_amazon_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6037, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_phonepay_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5644, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_phonepay_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5686, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_phonepay_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5729, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_phonepay_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5772, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_phonepay_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5818, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_phonepay_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5864, u'Skipped: PhonePay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_amazon_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5911, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_amazon_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5953, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_amazon_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 5995, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_amazon_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6080, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_amazon_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6126, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_amazon_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6172, u'Skipped: Amazon Pay Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_with_paytm_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6261, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_with_paytm_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6303, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_with_paytm_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6346, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_with_paytm_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6389, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_with_paytm_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6435, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_with_paytm_Free_Seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6481, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_with_tickets_pay_with_paytm_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6570, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_add_n_remove_with_tickets_pay_with_paytm_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6612, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_add_fnb_item_list_n_remove_with_tickets_pay_with_paytm_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6655, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_update_food_cart_pay_with_paytm_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6698, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_cancel_changes_in_food_cart_pay_with_paytm_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6744, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_verify_separate_fnb_order_pay_with_paytm_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py', 6790, u'Skipped: condition: True')<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py::JTMyAccountTestClass::test_recharge_with_valid_amount_No_offer_CC_DC</td>
-          <td class="col-duration">36.41</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_with_paytm_Free_Seating</td>
+          <td class="col-duration">80.34</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -389,43 +1643,106 @@ SeleniumDriver.py          126 INFO     Element not present with locator: //*[@c
 SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
 LoginPageJT.py              56 INFO     Entering the MoviePass User name
 SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: contact locatorType: id
+SeleniumDriver.py          129 INFO     Sent data on element with locator: contact locatorType: id
 LoginPageJT.py              58 INFO     Verifying the MoviePass User name
 SeleniumDriver.py           76 INFO     Element found with locator: contact_verify and  locatorType: id
 SeleniumDriver.py          100 INFO     Clicked on element with locator: contact_verify locatorType: id
 SeleniumDriver.py           76 INFO     Element found with locator: password and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: password locatorType: id
+SeleniumDriver.py          129 INFO     Sent data on element with locator: password locatorType: id
 LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
 SeleniumDriver.py           76 INFO     Element found with locator: signin_btn and  locatorType: id
 SeleniumDriver.py          100 INFO     Clicked on element with locator: signin_btn locatorType: id
 SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='amount-selector'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='amount-selector'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Recharge with  Credit / Debit card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Recharge with  Credit / Debit card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='card']/input[@type='tel'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='card']/input[@type='tel'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='half']/input[@type='tel'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='half']/input[@type='tel'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='half']/input[@type='password'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='half']/input[@type='password'] locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Premam')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Premam')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
+SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='date shadow-small undefined'] and  locatorType: xpath
+SeleniumDriver.py          120 INFO     Clicked the the Web element
+SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='schedule available'] and  locatorType: xpath
+SeleniumDriver.py          120 INFO     Clicked the the Web element
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[@class = 'free-selection'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
+FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
+FoodAndBrevrage.py          44 INFO     Getting the all Food details
+SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='food-details'] and  locatorType: xpath
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          49 INFO     Checking particular item exist in the Item lists
+FoodAndBrevrage.py          51 INFO     Adding the f&amp;b item as per input
+FoodAndBrevrage.py          54 INFO     FnB item added successfully
+FoodAndBrevrage.py          51 INFO     Adding the f&amp;b item as per input
+FoodAndBrevrage.py          54 INFO     FnB item added successfully
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          26 INFO     Confirming the orders
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='box progress enabled']/span[contains(text(),'Confirm Order')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='box progress enabled']/span[contains(text(),'Confirm Order')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] locatorType: xpath
 SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
 SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: txtPassword and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: txtPassword locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: cmdSubmit and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: cmdSubmit locatorType: id
+SeleniumDriver.py           76 INFO     Element found with locator: login-iframe and  locatorType: id
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
+SeleniumDriver.py          111 INFO     Cleared Text on element with locator: //*[@name='username'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@name='username'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='password'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@name='password'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn btn-primary ng-binding'] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn btn-primary ng-binding'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
 LoginPageJT.py              70 INFO     Signing out from JT
 SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
 SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">TestPackage/JTMyAccountPage/JTUserAccountPageTestCases.py::JTMyAccountTestClass::test_recharge_with_amount_button_No_offer_CC_DC</td>
-          <td class="col-duration">34.26</td>
+          <td class="col-name">TestPackage/JTFoodAndBeveragePage/JTFoodNBeverageTestCases.py::JTFnBTestClass::test_booking_fnb_items_with_tickets_pay_with_paytm_Qota_session</td>
+          <td class="col-duration">91.41</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -433,35 +1750,98 @@ SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/spa
 SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
 LoginPageJT.py              56 INFO     Entering the MoviePass User name
 SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: contact locatorType: id
+SeleniumDriver.py          129 INFO     Sent data on element with locator: contact locatorType: id
 LoginPageJT.py              58 INFO     Verifying the MoviePass User name
 SeleniumDriver.py           76 INFO     Element found with locator: contact_verify and  locatorType: id
 SeleniumDriver.py          100 INFO     Clicked on element with locator: contact_verify locatorType: id
 SeleniumDriver.py           76 INFO     Element found with locator: password and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: password locatorType: id
+SeleniumDriver.py          129 INFO     Sent data on element with locator: password locatorType: id
 LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
 SeleniumDriver.py           76 INFO     Element found with locator: signin_btn and  locatorType: id
 SeleniumDriver.py          100 INFO     Clicked on element with locator: signin_btn locatorType: id
 SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          122 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='amount-selector'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='amount-selector'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Recharge with  Credit / Debit card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Recharge with  Credit / Debit card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='card']/input[@type='tel'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='card']/input[@type='tel'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='half']/input[@type='tel'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='half']/input[@type='tel'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='half']/input[@type='password'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Sent data on element with locator: //*[@class='half']/input[@type='password'] locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Fan')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Fan')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
+SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='date shadow-small undefined'] and  locatorType: xpath
+SeleniumDriver.py          120 INFO     Clicked the the Web element
+SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='schedule available'] and  locatorType: xpath
+SeleniumDriver.py          120 INFO     Clicked the the Web element
+SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
+SeleniumDriver.py          144 INFO     Element not present with locator: //*[@class = 'free-selection'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A15')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A15')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
+FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
+FoodAndBrevrage.py          44 INFO     Getting the all Food details
+SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='food-details'] and  locatorType: xpath
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          49 INFO     Checking particular item exist in the Item lists
+FoodAndBrevrage.py          51 INFO     Adding the f&amp;b item as per input
+FoodAndBrevrage.py          54 INFO     FnB item added successfully
+FoodAndBrevrage.py          51 INFO     Adding the f&amp;b item as per input
+FoodAndBrevrage.py          54 INFO     FnB item added successfully
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          47 INFO     Getting all  child attribute of food details
+FoodAndBrevrage.py          56 INFO     F&amp;B item requested could not added as it is not available
+FoodAndBrevrage.py          26 INFO     Confirming the orders
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='box progress enabled']/span[contains(text(),'Confirm Order')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='box progress enabled']/span[contains(text(),'Confirm Order')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] locatorType: xpath
 SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
 SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: txtPassword and  locatorType: id
-SeleniumDriver.py          111 INFO     Sent data on element with locator: txtPassword locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: cmdSubmit and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: cmdSubmit locatorType: id
+SeleniumDriver.py           76 INFO     Element found with locator: login-iframe and  locatorType: id
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
+SeleniumDriver.py          111 INFO     Cleared Text on element with locator: //*[@name='username'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@name='username'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='password'] and  locatorType: xpath
+SeleniumDriver.py          129 INFO     Sent data on element with locator: //*[@name='password'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn btn-primary ng-binding'] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn btn-primary ng-binding'] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
+SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
+SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
+SeleniumDriver.py          140 INFO     Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
 LoginPageJT.py              70 INFO     Signing out from JT
 SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
 SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath</div></td></tr></tbody></table></body></html>

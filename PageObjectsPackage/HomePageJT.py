@@ -1,5 +1,5 @@
 from UtilityPackage.SeleniumDriver import SeleniumDriver
-import time,json
+import time,json,random
 
 
 """
@@ -46,7 +46,14 @@ class JTHomePage(SeleniumDriver):
         self.elementClick(self.locator["date_filter_default"]["xpath"].format(date), locatorType="xpath")
 
     def select_movie_session(self):
-        self.elementClick(self.locator["select_session"]["xpath"], locatorType="xpath")
+        date_elements = self.getElements(self.locator["locator_date"]["xpath"], locatorType="xpath")
+        element = random.choice(date_elements)
+        self.element_click_with_elment(element)
+        time.sleep(2)
+        session_elements = self.getElements(self.locator["locator_session"]["xpath"], locatorType="xpath")
+        element = random.choice(session_elements)
+        self.element_click_with_elment(element)
+        time.sleep(2)
 
     def select_movie_by_session_id(self, session_id):
         self.elementClick(self.locator["select_session_by_id"]["xpath"].format(session_id), locatorType="xpath")
