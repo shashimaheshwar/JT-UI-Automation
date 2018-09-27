@@ -1,5 +1,8 @@
 {
 	"skip_cheers": {
 		"xpath": "//*[contains(text(),'Skip and Proceed to View Ticket')]"
-	}
+	},
+	"verify_bookings":{
+      "xpath": "//*[@class='notice-message' and contains(text(),'Now that you have your ticket, Say Cheers!')]"
+    }
 }
