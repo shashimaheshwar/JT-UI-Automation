@@ -68,6 +68,7 @@ class JTMyAccountTestClass(unittest.TestCase):
             assert True
         else:
             assert False
+        self.ltj.signout_feature()
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")
     @pytest.mark.run(order=2)
@@ -141,6 +142,7 @@ class JTMyAccountTestClass(unittest.TestCase):
             assert True
         else:
             assert False
+        self.ltj.signout_feature()
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SANITY", reason="")
     @pytest.mark.run(order=7)
@@ -182,3 +184,4 @@ class JTMyAccountTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation() == True
 
         assert self.account.verify_last_booked_ticket(movie_theatre.split(",")[0])
+        self.ltj.signout_feature()

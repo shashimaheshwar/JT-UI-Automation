@@ -6,15 +6,17 @@ from ConfigVars.TestConfig import variables
 log = cl.customLogger(logging.DEBUG)
 
 container=sc.Build_Session_Container(200)
-
-Free_Seating_movie = sc.search_session({"type":"REALTIME","theatre":variables.THEATRE_NAME,
+try:
+    Free_Seating_movie = sc.search_session({"type":"REALTIME","theatre":variables.THEATRE_NAME,
                      "advance_token":False,'free_seating':True},container)
-Qota_session_movie = sc.search_session({"type":"QUOTA","theatre":variables.THEATRE_NAME,
+    Qota_session_movie = sc.search_session({"type":"QUOTA","theatre":variables.THEATRE_NAME,
                      "advance_token":False,'free_seating':False},container)
-Advance_Free_seating_movie = sc.search_session({"type":"REALTIME","theatre":variables.THEATRE_NAME,
+    Advance_Free_seating_movie = sc.search_session({"type":"REALTIME","theatre":variables.THEATRE_NAME,
                      "advance_token":True,'free_seating':True},container)
-Advance_Qota_movie = sc.search_session({"type":"QUOTA","theatre":variables.THEATRE_NAME,
+    Advance_Qota_movie = sc.search_session({"type":"QUOTA","theatre":variables.THEATRE_NAME,
                      "advance_token":True,'free_seating':False},container)
+except Exception:
+    log.error("Unable to find any session with such query.")
 
 
 try:
@@ -27,8 +29,5 @@ except UnboundLocalError:
     print("Session Does not exist")
     log.error(UnboundLocalError+"Session with provided query does not exist")
 
-print(Free_Seating_movie[random.randint(0,len(Qota_session_movie))].movie)
-for element in Free_Seating_movie:
-    print(element.movie, element.theatre, element.session_id)
 
 

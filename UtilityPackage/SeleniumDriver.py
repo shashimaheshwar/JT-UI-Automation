@@ -121,6 +121,14 @@ class SeleniumDriver():
         except:
             self.log.info("Unable to Click the element")
 
+    def send_keys_with_elment(self, element,value):
+        try:
+            element.send_keys(value)
+            self.log.info("Sent data to Web element")
+        except:
+            self.log.info("Unable to send data to the element")
+
+
     def sendKeys(self, data, locator, locatorType="id"):
         try:
             element = self.getElement(locator, locatorType)

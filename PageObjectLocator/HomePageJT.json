@@ -51,13 +51,13 @@
 		"xpath": "//*[@class='active']/p[contains(text(),'Bookings Open')]"
 	},
 	"assisted_bookings": {
-		"xpath": "//*[@class='active']/p[contains(text(),'Assisted Booking')]"
+		"xpath": "//*[@class='inactive']/p[contains(text(),'Assisted Booking')]"
 	},
 	"offers": {
-		"xpath": "//*[@class='active']/p[contains(text(),'Offers')]"
+		"xpath": "//*[@class='inactive']/p[contains(text(),'Offers')]"
 	},
 	"cheers": {
-		"xpath": "//*[@class='active']/p[contains(text(),'Cheers')]"
+		"xpath": "//*[@class='inactive']/p[contains(text(),'Cheers')]"
 	},
 	"search_movie": {
 		"xpath": "//*[@class='movie-search ']"

@@ -845,6 +845,7 @@ class JTFnBTestClass(unittest.TestCase):
 
     @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
     @pytest.mark.run(order=19)
+    @PaymentMethodStatus.simpl_payment
     @SessionTypeStatus.advance_free_seating
     def test_booking_verify_update_food_cart_pay_simpl_Advance_Free_seating(self):
         self.driver.get(self.baseURL)
@@ -2421,7 +2422,7 @@ class JTFnBTestClass(unittest.TestCase):
             assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
 
-    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,SMOKE,", reason="")
+    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION,", reason="")
     @pytest.mark.run(order=54)
     @PaymentMethodStatus.simpl_payment
     @SessionTypeStatus.free_seating

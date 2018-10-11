@@ -4,5 +4,53 @@
 	},
 	"verify_bookings":{
       "xpath": "//*[@class='notice-message' and contains(text(),'Now that you have your ticket, Say Cheers!')]"
-    }
+    },
+  "select_greetings_type": {
+    "xpath": "//*[@class='name' and contains(text(),'{0}')]"
+  },
+  "click_movie":{
+    "xpath":"//*[@class='primary' and contains(text(),'Select Movie')]"
+  },
+   "common_search":{
+    "xpath":"//*[@class='search']"
+  },
+  "select_search_result":{
+    "xpath":"//*[@class='primary' and contains(text(),'{0}')]"
+  },
+  "click_screens":{
+    "xpath":"//*[@class='primary' and contains(text(),'Select Screen')]"
+  },
+  "click_date":{
+    "xpath":"//*[@class='primary' and contains(text(),'Select Date')]"
+  },
+  "click_show_time":{
+    "xpath":"//*[@class='primary' and contains(text(),'Select Showtime')]"
+  },
+  "screen_list":{
+    "xpath":"//*[@class='subfilter']"
+  },
+  "date_list":{
+    "xpath": "//*[@class='list']"
+  },
+  "select_cheer_templete":{
+    "xpath":"//*[@class='template-cell shadow']"
+  },
+  "select_show_time":{
+    "xpath":"//*[@class='subfilter']"
+  },
+  "preview":{
+    "xpath":"//*[@class='enabled']"
+  },
+  "common_sender_details":{
+    "xpath":"//*[@class='value']"
+  },
+  "make_payment":{
+    "xpath":"//*[@class='enabled']"
+  },
+  "choose_greetings":{
+    "xpath":"//*[@class='choose-button' and contains(text(),'Choose a Greeting Now')]"
+  },
+  "customize_greeting":{
+    "xpath":"//*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')]"
+  }
 }

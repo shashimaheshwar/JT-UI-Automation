@@ -46,10 +46,10 @@ class JTHomePage(SeleniumDriver):
         self.elementClick(self.locator["date_filter_default"]["xpath"].format(date), locatorType="xpath")
 
     def select_movie_session(self):
-        date_elements = self.getElements(self.locator["locator_date"]["xpath"], locatorType="xpath")
-        element = random.choice(date_elements)
-        self.element_click_with_elment(element)
-        time.sleep(2)
+        # date_elements = self.getElements(self.locator["locator_date"]["xpath"], locatorType="xpath")
+        # element = random.choice(date_elements)
+        # self.element_click_with_elment(element)
+        # time.sleep(2)
         session_elements = self.getElements(self.locator["locator_session"]["xpath"], locatorType="xpath")
         element = random.choice(session_elements)
         self.element_click_with_elment(element)
@@ -71,3 +71,7 @@ class JTHomePage(SeleniumDriver):
 
     def select_search_movie(self):
         self.elementClick(self.locator["movie_search_res"]["xpath"], locatorType="xpath")
+
+    def select_cheers(self):
+        self.elementClick(self.locator["cheers"]["xpath"], locatorType="xpath")
+        time.sleep(10)

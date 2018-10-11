@@ -1,4 +1,4 @@
-Skip_Free_Seating=True
-Skip_Qota=True
+Skip_Free_Seating=False
+Skip_Qota=False
 Skip_Advance_Free=False
-Skip_Advance_Qota=True
+Skip_Advance_Qota=False
