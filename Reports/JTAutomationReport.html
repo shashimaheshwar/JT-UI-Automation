@@ -235,7 +235,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>JTAutomationReport.html</h1>
-    <p>Report generated on 11-Oct-2018 at 14:50:08 by<a href="https://pypi.python.org/pypi/pytest-html"> pytest-html</a> v1.19.0</p>
+    <p>Report generated on 18-Oct-2018 at 16:35:32 by<a href="https://pypi.python.org/pypi/pytest-html"> pytest-html</a> v1.19.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -251,8 +251,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>2.7.15</td></tr></table>
     <h2>Summary</h2>
-    <p>5 tests ran in 845.30 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">1 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>0 tests ran in 4.20 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">12 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">8 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -263,487 +263,183 @@ function filter_table(elem) {
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">TestPackage/JTCheersBookings/JTCombineCheersBookings.py::JTCombineCheersTestClass::test_cheers_booking_amazon_pay_payment</td>
-          <td class="col-duration">127.31</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_signout_feature::setup</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;TestPackage.JTCheersBookings.JTCombineCheersBookings.JTCombineCheersTestClass testMethod=test_cheers_booking_amazon_pay_payment&gt;<br/><br/>    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")<br/>    @pytest.mark.run(order=3)<br/>    @PaymentMethodStatus.ap_payment<br/>    def test_cheers_booking_amazon_pay_payment(self):<br/>        self.driver.get(self.baseURL)<br/>        self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)<br/>        time.sleep(variables.WAIT)<br/>        assert self.ltj.VerifyLogin()<br/>        movie_theatre = SessionTypeInfo.Free_Seating<br/>        self.homePageObj.movie_filter_with_theatre(movie_theatre.split(",")[0], movie_theatre.split(",")[1])<br/>        time.sleep(variables.WAIT)<br/>        result = self.homePageObj.verify_movie_selection()<br/>        assert result == True<br/>        self.homePageObj.select_movie_session()<br/>        if self.sl.is_free_seating_layout():<br/>            self.sl.select_free_seating_seat(variables.NUMBER_OF_SEATS)<br/>        else:<br/>            session_d = self.driver.current_url.split("/")[-1]<br/>            seat_info = self.utility.get_seat_avaliable(session_d)<br/>            self.sl.select_seats(seat_info.split("_")[0], seat_info.split("_")[1])<br/>        time.sleep(variables.WAIT)<br/>        self.sl.confirm_in()<br/>        time.sleep(5)<br/>        result = self.sl.verify_seat()<br/>        assert result == True<br/>        time.sleep(variables.WAIT)<br/>        if self.fnb.verify_existence_fnb():<br/>            self.fnb.skip_food_brev()<br/>        time.sleep(variables.WAIT)<br/>        self.pay.pay_with_amazon()<br/>        time.sleep(variables.WAIT)<br/>        result = self.cheers.verify_ticket_booking()<br/>        if result:<br/>            time.sleep(variables.LONG_WAIT)<br/>            self.cheers.select_the_greetings()<br/>            self.cheers.select_cheers_templete()<br/>            self.cheers.customize_greetins()<br/>            self.cheers.enter_all_details()<br/>            self.pay.pay_with_amazon()<br/>            assert self.pay.verify_booking_confirmation() == True<br/>        else:<br/>&gt;           assert self.pay.verify_booking_confirmation() == True<br/><span class="error">E           AssertionError: assert False == True</span><br/><span class="error">E            +  where False = &lt;bound method PaymentClassJT.verify_booking_confirmation of &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt;&gt;()</span><br/><span class="error">E            +    where &lt;bound method PaymentClassJT.verify_booking_confirmation of &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt;&gt; = &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt;.verify_booking_confirmation</span><br/><span class="error">E            +      where &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt; = &lt;TestPackage.JTCheersBookings.JTCombineCheersBookings.JTCombineCheersTestClass testMethod=test_cheers_booking_amazon_pay_payment&gt;.pay</span><br/><br/>TestPackage/JTCheersBookings/JTCombineCheersBookings.py:170: AssertionError<br/>------------------------------ Captured log call -------------------------------<br/>SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-LoginPageJT.py              56 INFO     Entering the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: contact locatorType: id
-LoginPageJT.py              58 INFO     Verifying the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact_verify and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: contact_verify locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: password and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: password locatorType: id
-LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
-SeleniumDriver.py           76 INFO     Element found with locator: signin_btn and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: signin_btn locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'The Martian')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'The Martian')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='schedule available'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@class = 'free-selection'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-FoodAndBrevrage.py          22 INFO     Skipping the food and beverage items
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Pay with  Amazon')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Pay with  Amazon')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Name')]/../input[@class='prefilled undefined' and not(@type='email')] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[contains(text(),'Name')]/../input[@class='prefilled undefined' and not(@type='email')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*/input[@type='email' and @class='prefilled undefined'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*/input[@type='email' and @class='prefilled undefined'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*/div[@class='prefixed-mobile']/input[@class='prefilled undefined'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*/div[@class='prefixed-mobile']/input[@class='prefilled undefined'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@id='pay_now_desktop']/span/input and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[@id='pay_now_desktop']/span/input locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: ap_email and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: ap_email locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: ap_password and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: ap_password locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: signInSubmit and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: signInSubmit locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='pay_now_desktop']/span/input and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='pay_now_desktop']/span/input locatorType: xpath
-CheersPageJT.py             32 INFO     Checking Element Presence.
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath</div></td></tr></tbody>
-      <tbody class="failed results-table-row">
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">TestPackage/JTCheersBookings/JTCombineCheersBookings.py::JTCombineCheersTestClass::test_cheers_booking_pp_payment</td>
-          <td class="col-duration">319.72</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;TestPackage.JTCheersBookings.JTCombineCheersBookings.JTCombineCheersTestClass testMethod=test_cheers_booking_pp_payment&gt;<br/><br/>    @pytest.mark.skipif(variables.TEST_TYPE not in "REGRESSION", reason="")<br/>    @pytest.mark.run(order=4)<br/>    @PaymentMethodStatus.pp_payment<br/>    def test_cheers_booking_pp_payment(self):<br/>        self.driver.get(self.baseURL)<br/>        self.ltj.UserLogin(variables.MOVIEPASS_USER_EMAIL, variables.MOVIEPASS_USER_PASSWORD)<br/>        time.sleep(variables.WAIT)<br/>        assert self.ltj.VerifyLogin()<br/>        movie_theatre = SessionTypeInfo.Qota_session<br/>        self.homePageObj.movie_filter_with_theatre(movie_theatre.split(",")[0], movie_theatre.split(",")[1])<br/>        time.sleep(variables.WAIT)<br/>        result = self.homePageObj.verify_movie_selection()<br/>        assert result == True<br/>        self.homePageObj.select_movie_session()<br/>        if self.sl.is_free_seating_layout():<br/>            self.sl.select_free_seating_seat(variables.NUMBER_OF_SEATS)<br/>        else:<br/>            session_d = self.driver.current_url.split("/")[-1]<br/>            seat_info = self.utility.get_seat_avaliable(session_d)<br/>            self.sl.select_seats(seat_info.split("_")[0], seat_info.split("_")[1])<br/>        time.sleep(variables.WAIT)<br/>        self.sl.confirm_in()<br/>        time.sleep(5)<br/>        result = self.sl.verify_seat()<br/>        assert result == True<br/>        time.sleep(variables.WAIT)<br/>        if self.fnb.verify_existence_fnb():<br/>            self.fnb.skip_food_brev()<br/>        time.sleep(variables.WAIT)<br/>        self.pay.pay_with_phonepay_wallet()<br/>        time.sleep(variables.WAIT)<br/>        result = self.cheers.verify_ticket_booking()<br/>        if result:<br/>            time.sleep(variables.LONG_WAIT)<br/>            self.cheers.select_the_greetings()<br/>            self.cheers.select_cheers_templete()<br/>            self.cheers.customize_greetins()<br/>            self.cheers.enter_all_details()<br/>            self.pay.pay_with_phonepay_wallet()<br/>&gt;           assert self.pay.verify_booking_confirmation() == True<br/><span class="error">E           AssertionError: assert False == True</span><br/><span class="error">E            +  where False = &lt;bound method PaymentClassJT.verify_booking_confirmation of &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt;&gt;()</span><br/><span class="error">E            +    where &lt;bound method PaymentClassJT.verify_booking_confirmation of &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt;&gt; = &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt;.verify_booking_confirmation</span><br/><span class="error">E            +      where &lt;PageObjectsPackage.PaymentPageJT.PaymentClassJT instance at 0x103e1ae18&gt; = &lt;TestPackage.JTCheersBookings.JTCombineCheersBookings.JTCombineCheersTestClass testMethod=test_cheers_booking_pp_payment&gt;.pay</span><br/><br/>TestPackage/JTCheersBookings/JTCombineCheersBookings.py:214: AssertionError<br/>------------------------------ Captured log call -------------------------------<br/>SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-LoginPageJT.py              56 INFO     Entering the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: contact locatorType: id
-LoginPageJT.py              58 INFO     Verifying the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact_verify and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: contact_verify locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: password and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: password locatorType: id
-LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
-SeleniumDriver.py           76 INFO     Element found with locator: signin_btn and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: signin_btn locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'The Jungle Book')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'The Jungle Book')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='schedule available'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[@class = 'free-selection'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@data-reactid,'Premium') and contains(text(),'C23')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@data-reactid,'Premium') and contains(text(),'C23')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-FoodAndBrevrage.py          22 INFO     Skipping the food and beverage items
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='paySubmitButton'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='paySubmitButton'] locatorType: xpath
-CheersPageJT.py             32 INFO     Checking Element Presence.
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-CheersPageJT.py            129 INFO     Selecting the slot availability
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] locatorType: xpath
-CheersPageJT.py             87 INFO     Selecting the cheers templates 
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='template-cell shadow'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-CheersPageJT.py            133 INFO     Customizeing the greetings
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] locatorType: xpath
-CheersPageJT.py             98 INFO     Verifying that  Preview Exists or not
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[@class='enabled'] locatorType: xpath
-CheersPageJT.py            103 INFO     Preview N/A
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='value'] and  locatorType: xpath
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Pay with  PhonePe - BHIM UPI/Cards/Wallet')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='paySubmitButton'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='paySubmitButton'] locatorType: xpath
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath</div></td></tr></tbody>
-      <tbody class="skipped results-table-row">
-        <tr>
-          <td class="col-result">Skipped</td>
-          <td class="col-name">TestPackage/JTCheersBookings/JTCombineCheersBookings.py::JTCombineCheersTestClass::test_cheers_booking_csimple_payment::setup</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Wallet_Qota_session::setup</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">('TestPackage/JTCheersBookings/JTCombineCheersBookings.py', 266, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">TestPackage/JTCheersBookings/JTCombineCheersBookings.py::JTCombineCheersTestClass::test_cheers_booking_wallet_payment</td>
-          <td class="col-duration">88.30</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Wallet_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">------------------------------ Captured log call -------------------------------<br/>SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-LoginPageJT.py              56 INFO     Entering the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: contact locatorType: id
-LoginPageJT.py              58 INFO     Verifying the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact_verify and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: contact_verify locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: password and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: password locatorType: id
-LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
-SeleniumDriver.py           76 INFO     Element found with locator: signin_btn and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: signin_btn locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'The Martian')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'The Martian')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='schedule available'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@class = 'free-selection'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-FoodAndBrevrage.py          22 INFO     Skipping the food and beverage items
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-CheersPageJT.py             32 INFO     Checking Element Presence.
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-CheersPageJT.py            129 INFO     Selecting the slot availability
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] locatorType: xpath
-CheersPageJT.py             87 INFO     Selecting the cheers templates 
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='template-cell shadow'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-CheersPageJT.py            133 INFO     Customizeing the greetings
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] locatorType: xpath
-CheersPageJT.py             98 INFO     Verifying that  Preview Exists or not
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[@class='enabled'] locatorType: xpath
-CheersPageJT.py            103 INFO     Preview N/A
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='value'] and  locatorType: xpath
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
-LoginPageJT.py              70 INFO     Signing out from JT
-SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">TestPackage/JTCheersBookings/JTCombineCheersBookings.py::JTCombineCheersTestClass::test_cheers_booking_credit_card_payment</td>
-          <td class="col-duration">133.12</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Wallet_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">------------------------------ Captured log call -------------------------------<br/>SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-LoginPageJT.py              56 INFO     Entering the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: contact locatorType: id
-LoginPageJT.py              58 INFO     Verifying the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact_verify and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: contact_verify locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: password and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: password locatorType: id
-LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
-SeleniumDriver.py           76 INFO     Element found with locator: signin_btn and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: signin_btn locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'The Martian')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'The Martian')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='schedule available'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@class = 'free-selection'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@id='justickets']/div/div[2]/div/div[3]/div/div[3]/div/div/div[1]/div[2]/div[1] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-FoodAndBrevrage.py          22 INFO     Skipping the food and beverage items
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Use a Saved Card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Use a Saved Card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'VISA')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'VISA')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@type='password'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@type='password'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: txtPassword and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: txtPassword locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: cmdSubmit and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: cmdSubmit locatorType: id
-CheersPageJT.py             32 INFO     Checking Element Presence.
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-CheersPageJT.py            129 INFO     Selecting the slot availability
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] locatorType: xpath
-CheersPageJT.py             87 INFO     Selecting the cheers templates 
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='template-cell shadow'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-CheersPageJT.py            133 INFO     Customizeing the greetings
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] and  locatorType: xpath
-SeleniumDriver.py          103 INFO     Cannot click on the element with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] locatorType: xpath
-CheersPageJT.py             98 INFO     Verifying that  Preview Exists or not
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[@class='enabled'] locatorType: xpath
-CheersPageJT.py            103 INFO     Preview N/A
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='value'] and  locatorType: xpath
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/div[@class='title' and contains(text(),'Pay with  Credit / Debit Card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Use a Saved Card')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Use a Saved Card')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'VISA')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'VISA')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@type='password'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@type='password'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: txtPassword and  locatorType: id
-SeleniumDriver.py          137 INFO     Sent data on element with locator: txtPassword locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: cmdSubmit and  locatorType: id
-SeleniumDriver.py          100 INFO     Clicked on element with locator: cmdSubmit locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
-LoginPageJT.py              70 INFO     Signing out from JT
-SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">TestPackage/JTCheersBookings/JTCombineCheersBookings.py::JTCombineCheersTestClass::test_cheers_booking_Paytm_payment</td>
-          <td class="col-duration">166.89</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_CC_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">------------------------------ Captured log call -------------------------------<br/>SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign In')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign In')] locatorType: xpath
-LoginPageJT.py              56 INFO     Entering the MoviePass User name
-SeleniumDriver.py           76 INFO     Element found with locator: contact and  locatorType: id
-SeleniumDriver.py          140 INFO     Cannot send data on the element with locator: contact locatorType: id
-LoginPageJT.py              58 INFO     Verifying the MoviePass User name
-SeleniumDriver.py           79 INFO     Element not found with locator: contact_verify and  locatorType: id
-SeleniumDriver.py          103 INFO     Cannot click on the element with locator: contact_verify locatorType: id
-SeleniumDriver.py           79 INFO     Element not found with locator: password and  locatorType: id
-SeleniumDriver.py          140 INFO     Cannot send data on the element with locator: password locatorType: id
-LoginPageJT.py              61 INFO     Sigin to JT via Movie Pass user
-SeleniumDriver.py           79 INFO     Element not found with locator: signin_btn and  locatorType: id
-SeleniumDriver.py          103 INFO     Cannot click on the element with locator: signin_btn locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'My Account')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'My Account')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Theatre')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a theatre...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a theatre...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Luxe: Phoenix Market City')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'Any Movie')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'Any Movie')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='search' and @placeholder='Search for a movie...'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@class='search' and @placeholder='Search for a movie...'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='value']/span[contains(text(),'The Jungle Book')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='value']/span[contains(text(),'The Jungle Book')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div[1]/h2 locatorType: xpath
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='schedule available'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class = 'free-selection'] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[@class = 'free-selection'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A15')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@data-reactid,'Elite') and contains(text(),'A15')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Confirm in')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Confirm in')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[@id='justickets']/div/div[2]/div/div[2]/div/div[4]/span locatorType: xpath
-FoodAndBrevrage.py          30 INFO     Checking the existence of Food and beverage item
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-FoodAndBrevrage.py          22 INFO     Skipping the food and beverage items
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip F&amp;B and Pay')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(text(),'Skip F&amp;B and Pay')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: login-iframe and  locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Cleared Text on element with locator: //*[@name='username'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@name='username'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='password'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@name='password'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn btn-primary ng-binding'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn btn-primary ng-binding'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] locatorType: xpath
-CheersPageJT.py             32 INFO     Checking Element Presence.
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Skip and Proceed to View Ticket')] locatorType: xpath
-CheersPageJT.py            129 INFO     Selecting the slot availability
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='choose-button' and contains(text(),'Choose a Greeting Now')] locatorType: xpath
-CheersPageJT.py             87 INFO     Selecting the cheers templates 
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='template-cell shadow'] and  locatorType: xpath
-SeleniumDriver.py          120 INFO     Clicked the the Web element
-CheersPageJT.py            133 INFO     Customizeing the greetings
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='swal2-confirm swal-confirm styled' and contains(text(),'Customise Greeting')] locatorType: xpath
-CheersPageJT.py             98 INFO     Verifying that  Preview Exists or not
-SeleniumDriver.py           79 INFO     Element not found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          152 INFO     Element not present with locator: //*[@class='enabled'] locatorType: xpath
-CheersPageJT.py            103 INFO     Preview N/A
-SeleniumDriver.py           89 INFO     Element found with locator: //*[@class='value'] and  locatorType: xpath
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py          127 INFO     Sent data to Web element
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='enabled'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='enabled'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='title' and contains(text(),'Pay with  Paytm')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[contains(@class,'enabled') and contains(text(),'Make Payment')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: login-iframe and  locatorType: id
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
-SeleniumDriver.py          111 INFO     Cleared Text on element with locator: //*[@name='username'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='username'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@name='username'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@name='password'] and  locatorType: xpath
-SeleniumDriver.py          137 INFO     Sent data on element with locator: //*[@name='password'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn btn-primary ng-binding'] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn btn-primary ng-binding'] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*[@class='btn-fullLen' and contains(text(),'Pay Now')] locatorType: xpath
-SeleniumDriver.py           76 INFO     Element found with locator: //*[contains(text(),'Thank you for choosing')] and  locatorType: xpath
-SeleniumDriver.py          148 INFO     Element present with locator: //*[contains(text(),'Thank you for choosing')] locatorType: xpath
-LoginPageJT.py              70 INFO     Signing out from JT
-SeleniumDriver.py           76 INFO     Element found with locator: //*/span[contains(text(),'Sign Out')] and  locatorType: xpath
-SeleniumDriver.py          100 INFO     Clicked on element with locator: //*/span[contains(text(),'Sign Out')] locatorType: xpath</div></td></tr></tbody></table></body></html>
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
+        <tr>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_CC_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
+        <tr>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_CC_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="error results-table-row">
+        <tr>
+          <td class="col-result">Error</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_PP_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">cls = &lt;class 'TestPackage.JTBookingWithMoviePassUser.JTMoviePassUserBookingTestCases.JTBookingsMoviePassUser'&gt;<br/><br/>    @classmethod<br/>    def setUpClass(cls):<br/>&gt;       driver = DriverIntialization(urls.HOME_PAGE).return_driver()<br/><br/>TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py:23: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>UtilityPackage/DriverIntialization.py:11: in __init__<br/>    self.driver = webdriver.Chrome("")<br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py:68: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x104286310&gt;<br/><br/>    def start(self):<br/>        """<br/>            Starts the Service.<br/>    <br/>            :Exceptions:<br/>             - WebDriverException : Raised either when it can't start the service<br/>               or when it can't connect to the service<br/>            """<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != 'Windows',<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>                raise WebDriverException(<br/>                    "'%s' executable needs to be in PATH. %s" % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/>                )<br/>            elif err.errno == errno.EACCES:<br/>                raise WebDriverException(<br/>                    "'%s' executable may have wrong permissions. %s" % (<br/>&gt;                       os.path.basename(self.path), self.start_error_message)<br/>                )<br/><span class="error">E               WebDriverException: Message: '' executable may have wrong permissions. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>../../../Documents/Robot/venv/lib/python2.7/site-packages/selenium/webdriver/common/service.py:88: WebDriverException<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_JT_Login::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 36, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Wallet_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 106, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_CC_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 292, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_PP_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 477, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_PP_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 523, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_PP_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 569, u'Skipped: condition: True')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Simpl_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 615, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Simpl_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 661, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Simpl_Advance_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 707, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Paytm_Qota_session::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 753, u'Skipped: PayTm Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Simpl_Advance_Qota::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 799, u'Skipped: Simpl Payment Method is disabled')<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py::JTBookingsMoviePassUser::test_booking_moviepass_user_Paytm_Free_seating::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">('TestPackage/JTBookingWithMoviePassUser/JTMoviePassUserBookingTestCases.py', 845, u'Skipped: PayTm Payment Method is disabled')<br/></div></td></tr></tbody></table></body></html>

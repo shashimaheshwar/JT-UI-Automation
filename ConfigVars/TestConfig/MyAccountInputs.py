@@ -1,5 +1,5 @@
 Valid_Recharge_Amount="20"
 Recharge_offer_name="Testing recharge offer"
-JusTicet_Gift_Card="DTR7UGPVQTZS"
+JusTicet_Gift_Card="CODE"
 Amount_Button="250,500,1000"
 Verify_for_Recharge="Recharged Justickets Wallet"

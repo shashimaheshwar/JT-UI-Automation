@@ -166,3 +166,4 @@ class JTCheersTestClass(unittest.TestCase):
         assert self.pay.verify_booking_confirmation()
         self.ltj.signout_feature()
         time.sleep(variables.WAIT)
+
